@@ -13,11 +13,13 @@ margin-right: 1%;
 `;
 
 const HomeViewRight = styled.div`
-width: 50%;
-
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
-const HomeViewTitle = styled.h1`
+const HomeViewName = styled.h1`
   margin-bottom: 1%;
   font-family: 'Paytone One', sans-serif;
   font-size: 4em;
@@ -27,33 +29,20 @@ const HomeViewTitle = styled.h1`
   line-height: 1;
 `;
 
-const HomeViewSecondTitle = styled.h2`
+const HomeViewPosition = styled.h2`
   margin-bottom: 5%;
   line-height: 2;
   text-align: left;
 `;
 
-const HomeViewContent = styled.div`
-  font-size: 2em;
-  text-align: left;
-
+const HomeViewWelcome = styled.div`
+text-align: left;
   p {
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
-  animation: type 2s steps(60, end); 
-  }
-
-  p:nth-child(3){
-    font-size: 3em;
-    margin-top: 5%;
-    font-size: 40px;
-    color: #FFE48F;
-    animation: type2 4s steps(60, end);
-  }
-
-  span {
-  animation: blink 1s infinite;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation: type 3s steps(60, end); 
   }
 
   @keyframes type{ 
@@ -61,18 +50,16 @@ const HomeViewContent = styled.div`
     width: 0; 
     } 
   } 
+`;
 
-  @keyframes type2{
-    0%{
-      width: 0;
-      }
-    50%{
-      width: 0;
-      }
-    100%{
-       width: 100; 
-      } 
-} 
+const HomeViewContent = styled(HomeViewWelcome)`
+  font-size: 20px;
+
+  span {
+  color: #FFE48F;
+
+  animation: blink 1s infinite;
+  }
 
   @keyframes blink{
   to {
@@ -94,14 +81,15 @@ function HomeView() {
         />
       </HomeViewLeft>
       <HomeViewRight>
-        <HomeViewTitle>MIKOŁAJ</HomeViewTitle>
-        <HomeViewTitle>CIĘSZCZYK</HomeViewTitle>
-        <HomeViewSecondTitle>JUNIOR FRONT-END DEVELOPER</HomeViewSecondTitle>
-        <HomeViewContent>
+        <HomeViewWelcome>
           <p>
-            Cześć!
+            Cześć, nazywam się
           </p>
-          <p>Jestem junior front-end developerem, </p>
+        </HomeViewWelcome>
+        <HomeViewName>MIKOŁAJ</HomeViewName>
+        <HomeViewName>CIĘSZCZYK</HomeViewName>
+        <HomeViewPosition>JUNIOR FRONT-END DEVELOPER</HomeViewPosition>
+        <HomeViewContent>
           <p>
             a to moje portfolio! ;-)
             <span>|</span>
