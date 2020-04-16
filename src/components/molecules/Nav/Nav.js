@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
-import { NavButton } from 'components/atoms/NavButton/NavButton';
 
 const NavWrapper = styled.div`
   display: flex;

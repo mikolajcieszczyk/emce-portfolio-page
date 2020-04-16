@@ -42,18 +42,38 @@ text-align: left;
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    animation: type 3s steps(60, end); 
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
   }
 
-  @keyframes type{ 
-  from { 
-    width: 0; 
-    } 
-  } 
+  @keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
 `;
 
-const HomeViewContent = styled(HomeViewWelcome)`
-  font-size: 20px;
+const HomeViewContent = styled.div`
+  text-align: left;
+  p {
+    font-size: 3em;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation: type 3s steps(60, end);
+  }
+
+  @keyframes type{
+  from {
+    width: 0;
+    }
+  }
 
   span {
   color: #FFE48F;
@@ -91,7 +111,7 @@ function HomeView() {
         <HomeViewPosition>JUNIOR FRONT-END DEVELOPER</HomeViewPosition>
         <HomeViewContent>
           <p>
-            a to moje portfolio! ;-)
+            a to moje portfolio ;-)
             <span>|</span>
           </p>
         </HomeViewContent>
