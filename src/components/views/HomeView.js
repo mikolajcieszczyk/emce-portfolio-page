@@ -33,18 +33,51 @@ const HomeViewSecondTitle = styled.h2`
   text-align: left;
 `;
 
-const HomeViewContent = styled.p`
+const HomeViewContent = styled.div`
   font-size: 2em;
   text-align: left;
 
   p {
-    text-align: justify;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: type 2s steps(60, end); 
   }
 
-  p:last-child {
-    margin-top: 2%;
+  p:nth-child(3){
+    font-size: 3em;
+    margin-top: 5%;
+    font-size: 40px;
     color: #FFE48F;
-    text-align: center;
+    animation: type2 4s steps(60, end);
+  }
+
+  span {
+  animation: blink 1s infinite;
+  }
+
+  @keyframes type{ 
+  from { 
+    width: 0; 
+    } 
+  } 
+
+  @keyframes type2{
+    0%{
+      width: 0;
+      }
+    50%{
+      width: 0;
+      }
+    100%{
+       width: 100; 
+      } 
+} 
+
+  @keyframes blink{
+  to {
+    opacity: .0;
+    }
   }
 `;
 
@@ -65,9 +98,14 @@ function HomeView() {
         <HomeViewTitle>CIĘSZCZYK</HomeViewTitle>
         <HomeViewSecondTitle>JUNIOR FRONT-END DEVELOPER</HomeViewSecondTitle>
         <HomeViewContent>
-          Cześć!
-          <p>Jestem junior front-end developerem. Czerpię dużą przyjemność z odkrywania magii programowania i procesu tworzenia.</p>
-          <p>Poznaj moje projekty ;-)</p>
+          <p>
+            Cześć!
+          </p>
+          <p>Jestem junior front-end developerem, </p>
+          <p>
+            a to moje portfolio! ;-)
+            <span>|</span>
+          </p>
         </HomeViewContent>
       </HomeViewRight>
     </HomeViewWrapper>

@@ -20,10 +20,10 @@ const NavigationLink = styled(NavLink)`
 `;
 
 const navTitles = [
-    { id: 1, title: "Home", path: "/" },
-    { id: 2, title: "Stack", path: "/stack" },
-    { id: 3, title: "Portfolio", path: "/portfolio" },
-    { id: 4, title: "Contact", path: "/contact" },
+    { id: 1, title: "Index", path: "/" },
+    { id: 2, title: "Technologie", path: "/stack" },
+    { id: 3, title: "Projekty", path: "/portfolio" },
+    { id: 4, title: "Kontakt", path: "/contact" },
 ];
 
 const showNavTitles = navTitles.map((element) => (
