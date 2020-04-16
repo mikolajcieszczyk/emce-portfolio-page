@@ -5,7 +5,6 @@ import mikolajPhoto from 'assets/images/mikolaj.jpg';
 const HomeViewWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
 `;
 
 const HomeViewLeft = styled.div`
