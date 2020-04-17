@@ -6,16 +6,16 @@ import htmlIcon from 'assets/images/icons8-html-5-144.png';
 import cssIcon from 'assets/images/icons8-css3-144.png';
 import sassIcon from 'assets/images/icons8-sass-avatar-144.png';
 import jsIcon from 'assets/images/icons8-javascript-144.png';
-import reactIcon from 'assets/images/icons8-react-160.png';
+import reactIcon from 'assets/images/iconfinder_React.js_logo_1174949.png';
 
 import jqueryIcon from 'assets/images/iconfinder_jquery_308442.png';
 import bootstrapIcon from 'assets/images/icons8-bootstrap-144.png';
 import scIcon from 'assets/images/styled-components.png';
-import seoIcon from 'assets/images/iconfinder_Graph-Magnifier_379472.png';
 import npmIcon from 'assets/images/icons8-npm-144.png';
-import yarnIcon from 'assets/images/iconfinder_yarn_4691251.png';
-import sbIcon from 'assets/images/storybook.svg';
-import gitIcon from 'assets/images/icons8-github-150.png';
+import sbIcon from 'assets/images/storybook-icon.png';
+import githubIcon from 'assets/images/GitHub-Mark-Light-120px-plus.png';
+import gitIcon from 'assets/images/Git-Logo-White.png';
+import yarnIcon from 'assets/images/yarn-icon.png';
 
 import { TabletMobileCombo } from '@styled-icons/entypo';
 import { MobileFriendly } from '@styled-icons/material-outlined';
@@ -63,13 +63,12 @@ const StackViewImage = styled.figure`
   align-items: center;
   justify-content: flex-end;
 
-  height: 200px;
+  /* height: 200px; */
 
-  /* background: #FFE48F; */
-
+width: 100%;
 
   figcaption {
-      margin-top: 5%;
+      margin-top: 1%;
       font-weight: 700;
   }
 `;
@@ -89,41 +88,17 @@ function StackView() {
         key={el.id}
         src={el.src}
         alt={el.alt}
-        style={{ width: "144px" }}
+        style={{ width: "144px", height: "144px" }}
       />
       <figcaption>{el.caption}</figcaption>
     </StackViewImage>
   )
-  );
-
-  const additionalTechnologies = [
-    { id: 14, src: TabletMobileCombo, alt: "rwdIcon", size: "15", title: "RWD", text: "Responsive Web Design" },
-    { id: 15, src: MobileFriendly, alt: "mobileFirstIcon", size: "15", title: "Mobile First", text: "Mobile First" },
-    { id: 16, src: Search, alt: "seoIcon", size: "15", title: "SEO", text: "Search Engine Optimization" }
-  ]
-
-  const mapAdditionalTechnologies = additionalTechnologies.map((el) => (
-    <div>
-      <{el.src}
-        key={el.id}
-        size={el.size}
-        title={el.title}
-        alt={el.alt}
-      />
-      <p>{el.text}</p>
-    </div>
-  )
-  )
+  );  
 
   const secondaryTechnologies = [
     { id: 6, src: jqueryIcon, alt: "jqueryIcon", caption: "jQuery" },
     { id: 7, src: bootstrapIcon, alt: "bootstrapIcon", caption: "Bootstrap" },
     { id: 8, src: scIcon, alt: "styledComponentsIcon", caption: "Styled Components" },
-    { id: 10, src: seoIcon, alt: "seoIcon", caption: "SEO" },
-    { id: 11, src: npmIcon, alt: "npmIcon", caption: "NPM" },
-    { id: 12, src: yarnIcon, alt: "yarnIcon", caption: "YARN" },
-    { id: 12, src: sbIcon, alt: "sbIcon", caption: "Storybook" },
-    { id: 13, src: gitIcon, alt: "gitIcon", caption: "Git" },
   ];
 
   const mapSecondaryTechnologies = secondaryTechnologies.map((el) => (
@@ -132,12 +107,58 @@ function StackView() {
         key={el.id}
         src={el.src}
         alt={el.alt}
-        style={{ width: "60px" }}
+        style={{ width: "60px", height: "60px" }}
       />
       <figcaption>{el.caption}</figcaption>
     </StackViewImage>
   )
   )
+
+  const tertiaryTechnologies = [
+    { id: 11, src: npmIcon, alt: "npmIcon", caption: "NPM" },
+    { id: 12, src: yarnIcon, alt: "yarnIcon", caption: "YARN" },
+    { id: 12, src: sbIcon, alt: "sbIcon", caption: "Storybook" },
+    { id: 13, src: gitIcon, alt: "gitIcon", caption: "Git" },
+    { id: 14, src: githubIcon, alt: "githubIcon", caption: "GitHub" },
+  ]
+
+  const mapTertiaryTechnologies = tertiaryTechnologies.map((el) => (
+    <StackViewImage>
+      <img
+        key={el.id}
+        src={el.src}
+        alt={el.alt}
+        style={{ width: "60px", height: "60px" }}
+      />
+      <figcaption>{el.caption}</figcaption>
+    </StackViewImage>
+  )
+  )
+
+  const additionalTechnologies = [
+    {
+      id: 15,
+      component: <TabletMobileCombo alt="rwdIcon" size="15" title="RWD" />,
+      text: 'Responsive Web Design',
+    },
+    {
+      id: 16,
+      component: <MobileFriendly alt="mobileFirstIcon" size="15" title="Mobile First" />,
+      text: 'Mobile First',
+    },
+    {
+      id: 17,
+      component: <Search alt="seoIcon" size="15" title="SEO" />,
+      text: 'Search Engine Optimization',
+    },
+  ];
+
+  const mapAdditionalTechnologies = additionalTechnologies.map((el) => (
+    <div id={el.id}>
+      {el.component}
+      <p>{el.text}</p>
+    </div>
+  ));
 
   return (
     <>
@@ -146,16 +167,20 @@ function StackView() {
         <StackViewIconsContainer>
           {mapMainTechnologies}
         </StackViewIconsContainer>
+        <StackViewIconsContainer>
+          {mapSecondaryTechnologies}
+        </StackViewIconsContainer>
         <h2>
           zgodnie z zasadami
         </h2>
         <StackViewIconsContainer>
           {mapAdditionalTechnologies}
         </StackViewIconsContainer>
-        <h2>PONADTO</h2>
+        <h2>PONADTO korzystam z</h2>
         <StackViewIconsContainer>
-          {mapSecondaryTechnologies}
+          {mapTertiaryTechnologies}
         </StackViewIconsContainer>
+        
         {/* <span>Atomic Design</span> */}
 
 
