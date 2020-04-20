@@ -21,6 +21,121 @@ import { TabletMobileCombo } from '@styled-icons/entypo';
 import { MobileFriendly } from '@styled-icons/material-outlined';
 import { Search } from '@styled-icons/fa-solid';
 
+import AstronomyBg from 'assets/images/astronomy-quiz-img.png';
+import TictactoeBg from 'assets/images/tictactoe-img.png';
+import TodolistBg from 'assets/images/todo-list-img.png';
+import WorkRecordBg from 'assets/images/workhour-record-app-img.png';
+import NjscrBg from 'assets/images/nodejsclasregister-img.png';
+import someCompanyPageBg from 'assets/images/somecompanypage-img.png';
+
+import { PortfolioViewRectangle, PortfolioViewRectangleCaption, ProjectLink } from 'components/views/PortfolioView';
+
+
+export const projectTiles = [
+    {
+        id: 98,
+        component: <PortfolioViewRectangle
+          alt="work record app"
+          style={{
+                backgroundImage: `url(${WorkRecordBg})`,
+                backgroundPosition: "center-top",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat"
+            }}
+        >
+          <PortfolioViewRectangleCaption>
+            <ProjectLink to="/portfolio/work-record-app">
+              Work Record App
+            </ProjectLink>
+          </PortfolioViewRectangleCaption>
+        </PortfolioViewRectangle>,
+    },
+    {
+        id: 97,
+        component: <PortfolioViewRectangle
+          alt="tic tac toe"
+          style={{ 
+                backgroundImage: `url(${TictactoeBg})`, 
+                backgroundPosition: "center-top", 
+                backgroundSize: "cover", 
+                backgroundRepeat: "no-repeat" }}
+        >
+          <PortfolioViewRectangleCaption>
+            <ProjectLink to="/portfolio/tictac">
+              Tic Tac Toe
+            </ProjectLink>
+          </PortfolioViewRectangleCaption>
+        </PortfolioViewRectangle>,
+    },
+    {
+        id: 96,
+        component: <PortfolioViewRectangle
+          alt="node js class register"
+          style={{ 
+                backgroundImage: `url(${NjscrBg})`, 
+                backgroundPosition: "center-top", 
+                backgroundSize: "cover", 
+                backgroundRepeat: "no-repeat" }}
+        >
+          <PortfolioViewRectangleCaption>
+            <ProjectLink to="/portfolio/nodejs-class-register">
+              NodeJS Class Register
+            </ProjectLink>
+          </PortfolioViewRectangleCaption>
+        </PortfolioViewRectangle>,
+    },
+    {
+        id: 99,
+        component: <PortfolioViewRectangle
+          alt="astronomy quiz"
+          style={{ 
+                backgroundImage: `url(${AstronomyBg})`, 
+                backgroundPosition: "center-top", 
+                backgroundSize: "cover", 
+                backgroundRepeat: "no-repeat" }}
+        >
+          <PortfolioViewRectangleCaption>
+            <ProjectLink to="/portfolio/astronomy-quiz">
+              Astronomy Quiz
+            </ProjectLink>
+          </PortfolioViewRectangleCaption>
+        </PortfolioViewRectangle>,
+    },
+    {
+        id: 95,
+        component: <PortfolioViewRectangle
+          alt="Todolist"
+          style={{
+                backgroundImage: `url(${TodolistBg})`,
+                backgroundPosition: "center-top",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat"
+            }}
+        >
+          <PortfolioViewRectangleCaption>
+            <ProjectLink to="/portfolio/todolist">To-Do List</ProjectLink>
+          </PortfolioViewRectangleCaption>
+        </PortfolioViewRectangle>,
+    },
+    {
+        id: 94,
+        component: <PortfolioViewRectangle
+          alt="SomeCompanyPage"
+          style={{ 
+                backgroundImage: `url(${someCompanyPageBg})`, 
+                backgroundPosition: "center-top", 
+                backgroundSize: "cover", 
+                backgroundRepeat: "no-repeat" }}
+        >
+          <PortfolioViewRectangleCaption>
+            <ProjectLink to="/portfolio/some-company-page">
+              Some Company Page
+            </ProjectLink>
+          </PortfolioViewRectangleCaption>
+        </PortfolioViewRectangle>,
+    },
+]
+
 export const mainTechnologies = [
     { id: 1, src: htmlIcon, alt: "htmlIcon", caption: "HTML5", },
     { id: 2, src: cssIcon, alt: "cssIcon", caption: "CSS3" },

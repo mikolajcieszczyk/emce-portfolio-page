@@ -16,6 +16,21 @@ const StackViewTitle = styled.h2`
    text-transform: uppercase;
 
    margin: 1% 0;
+
+   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+   @keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
 `;
 
 const StackViewLineWrapper = styled.div`
@@ -43,12 +58,18 @@ const StackViewColumnWrapper = styled.div`
 `;
 
 const StackViewImage = styled.figure`
+  width: ${props => props.small ? "25%" : "20%"};
+
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
 
-  width: ${props => props.small ? "25%" : "20%"};
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.2;
+  }
 
   figcaption {
       margin: 2%;
