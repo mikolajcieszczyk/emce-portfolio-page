@@ -3,28 +3,35 @@ import styled from 'styled-components';
 
 import WorkRecordBg from 'assets/images/workhour-record-app-img.png';
 import htmlIcon from 'assets/images/icons8-html-5-144.png';
-import cssIcon from 'assets/images/icons8-css3-144.png';
+import sassIcon from 'assets/images/icons8-sass-avatar-144.png';
+import jqueryIcon from 'assets/images/iconfinder_jquery_308442.png';
 import jsIcon from 'assets/images/icons8-javascript-144.png';
+import mongoIcon from 'assets/images/mongodb-icon.png';
+import expressIcon from 'assets/images/expressjs-icon.png';
 import githubIcon from 'assets/images/GitHub-Mark-Light-120px-plus.png';
 import { Web } from '@styled-icons/foundation';
 
+const ProjectTitle = styled.h2`
+  color: #FFE48F;
+  margin: 2% 0 1%;
+
+  text-transform: uppercase;
+`;
 
 const ProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
+  grid-gap: 1rem;
 
   height: 250px;
-
-  /* border: 1px solid white; */
-`;
-
-const ProjectTitle = styled.h2`
-  color: #FFE48F;
 `;
 
 const ProjectStack = styled.div`
-  margin-top: auto;
-  margin-bottom: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  font-weight: 700;
 `;
 
 const ProjectImage = styled.div`
@@ -34,14 +41,34 @@ const ProjectImage = styled.div`
 `;
 
 const ProjectDesc = styled.div`
-  padding: 1%;
+  display: grid;
+
+  p {
+    font-size: 14px;
+    text-align: justify;
+
+    span {
+      color: #FFE48F; 
+    }
+  }
 `;
 
 const ProjectLinks = styled.div`
-  margin-top: 5%;
-
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
+  align-items: end;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  figcaption {
+    color: #FFE48F;
+    font-weight: 700;
+  }
 `;
 
 function WorkRecordApp() {
@@ -65,11 +92,11 @@ function WorkRecordApp() {
 
           <figure>
             <img
-              src={cssIcon}
-              alt="CSS"
+              src={sassIcon}
+              alt="SASS"
               style={{ width: "50px", height: "50px" }}
             />
-            <figcaption>CSS3</figcaption>
+            <figcaption>Sass</figcaption>
           </figure>
 
           <figure>
@@ -81,32 +108,66 @@ function WorkRecordApp() {
             <figcaption>JavaScript</figcaption>
           </figure>
 
+          <figure>
+            <img
+              src={jqueryIcon}
+              alt="jQuery"
+              style={{ width: "40px", height: "40px" }}
+            />
+            <figcaption>jQuery</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src={mongoIcon}
+              alt="MongoDB"
+              style={{ width: "40px", height: "40px" }}
+            />
+            <figcaption>MongoDB</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src={expressIcon}
+              alt="ExpressJS"
+              style={{ width: "40px", height: "40px" }}
+            />
+            <figcaption>ExpressJS</figcaption>
+          </figure>
+
         </ProjectStack>
         <ProjectImage />
         <ProjectDesc>
           <p>
-            Enim aliqua elit ullamco aliquip et aliquip magna duis minim mollit.
-            Do deserunt deserunt aliqua consectetur amet ex tempor et incididunt ullamco.
-            Cillum do occaecat id in quis duis sit id sunt dolor irure.
-          </p>
-          <p>
-            Enim aliqua elit ullamco aliquip et aliquip magna duis minim mollit.
-            Do deserunt deserunt aliqua consectetur amet ex tempor et incididunt ullamco.
-            Cillum do occaecat id in quis duis sit id sunt dolor irure.
+            <span>Autorska aplikacja</span>
+            {' '}
+            przeznaczona do użytku dla wszelkiej maści freelancerów, korepetytorów lub... trenerów tenisa (moja motywacja!) ;-) 
+            {' '}
+            <span>Umożliwia dodawanie/edycję/usuwanie klientów,</span>
+            {' '}
+            wraz z ich predefiniowanymi stawkami i notatkami, dodawanie przepracowanych godzin, które są grupowane w okresy miesięczne. 
+            {' '}
+            <span>Głównym pożytkiem</span>
+            {' '}
+            płynącym z aplikacji jest możliwość generowania raportów miesięcznych, które można wyeksportować do PDF i przedstawić pracodawcy lub schować do segregatora.
           </p>
 
           <ProjectLinks>
             <figure>
-              <img
-                src={githubIcon}
-                alt="GitHub"
-                style={{ width: "50px", height: "50px" }}
-              />
-              <figcaption>Code</figcaption>
+              <a href="https://github.com/mikolajcieszczyk/work-record-app" target="_blank">
+                <img
+                  src={githubIcon}
+                  alt="GitHub"
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <figcaption>Kod</figcaption>
+              </a>
             </figure>
             <figure>
-              <Web size="55px" />
-              <figcaption>View</figcaption>
+              <a href="#" target="_blank">
+                <Web size="56px" />
+                <figcaption>Zobacz</figcaption>
+              </a>
             </figure>
           </ProjectLinks>
 

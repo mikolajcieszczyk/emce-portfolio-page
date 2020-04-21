@@ -48,6 +48,12 @@ const PortfolioViewTitle = styled.h2`
     opacity: 1;
   }
 }
+
+span {
+  display: block;
+  font-size: 10px;
+  color: #fff;
+}
 `;
 
 const PortfolioViewGrid = styled.div`
@@ -84,9 +90,6 @@ export const ProjectLink = styled(Link)`
 
 
 function PortfolioView() {
-
-    
-
     const mapProjectsTiles = projectTiles.map((el) => (
       <div id={el.id}>
         {el.component}
@@ -97,10 +100,9 @@ function PortfolioView() {
       <Router>
         <PortfolioViewWrapper>
           <PortfolioViewTitle>
-            wybrane projekty
+            wybrane projekty <span>[najnowsze od lewej]</span>
           </PortfolioViewTitle>
           <PortfolioViewGrid>
-
             {mapProjectsTiles}
           </PortfolioViewGrid>
         </PortfolioViewWrapper>

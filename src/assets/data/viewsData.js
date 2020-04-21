@@ -32,107 +32,113 @@ import { PortfolioViewRectangle, PortfolioViewRectangleCaption, ProjectLink } fr
 
 
 export const projectTiles = [
+  {
+    id: 96,
+    component: <ProjectLink to="/portfolio/nodejs-class-register">
+      <PortfolioViewRectangle
+        alt="node js class register"
+        style={{
+          backgroundImage: `url(${NjscrBg})`,
+          backgroundPosition: "center-top",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <PortfolioViewRectangleCaption>
+          NodeJS Class Register
+        </PortfolioViewRectangleCaption>
+      </PortfolioViewRectangle>
+    </ProjectLink>,
+  },
     {
         id: 98,
-        component: <PortfolioViewRectangle
-          alt="work record app"
-          style={{
+        component: <ProjectLink to="/portfolio/work-record-app">
+          <PortfolioViewRectangle
+            alt="work record app"
+            style={{
                 backgroundImage: `url(${WorkRecordBg})`,
                 backgroundPosition: "center-top",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat"
             }}
-        >
-          <PortfolioViewRectangleCaption>
-            <ProjectLink to="/portfolio/work-record-app">
+          >
+            <PortfolioViewRectangleCaption>
               Work Record App
-            </ProjectLink>
-          </PortfolioViewRectangleCaption>
-        </PortfolioViewRectangle>,
+            </PortfolioViewRectangleCaption>
+          </PortfolioViewRectangle>
+        </ProjectLink>,
+
     },
     {
         id: 97,
-        component: <PortfolioViewRectangle
-          alt="tic tac toe"
-          style={{ 
+        component: <ProjectLink to="/portfolio/tictac">
+          <PortfolioViewRectangle
+            alt="tic tac toe"
+            style={{ 
                 backgroundImage: `url(${TictactoeBg})`, 
                 backgroundPosition: "center-top", 
                 backgroundSize: "cover", 
-                backgroundRepeat: "no-repeat" }}
-        >
-          <PortfolioViewRectangleCaption>
-            <ProjectLink to="/portfolio/tictac">
+                backgroundRepeat: "no-repeat" 
+                }}
+          >
+            <PortfolioViewRectangleCaption>
               Tic Tac Toe
-            </ProjectLink>
-          </PortfolioViewRectangleCaption>
-        </PortfolioViewRectangle>,
+            </PortfolioViewRectangleCaption>
+          </PortfolioViewRectangle>
+        </ProjectLink>,
     },
-    {
-        id: 96,
-        component: <PortfolioViewRectangle
-          alt="node js class register"
-          style={{ 
-                backgroundImage: `url(${NjscrBg})`, 
-                backgroundPosition: "center-top", 
-                backgroundSize: "cover", 
-                backgroundRepeat: "no-repeat" }}
-        >
-          <PortfolioViewRectangleCaption>
-            <ProjectLink to="/portfolio/nodejs-class-register">
-              NodeJS Class Register
-            </ProjectLink>
-          </PortfolioViewRectangleCaption>
-        </PortfolioViewRectangle>,
-    },
+  {
+    id: 94,
+    component: <ProjectLink to="/portfolio/some-company-page">
+      <PortfolioViewRectangle
+        alt="SomeCompanyPage"
+        style={{
+          backgroundImage: `url(${someCompanyPageBg})`,
+          backgroundPosition: "center-top",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <PortfolioViewRectangleCaption>
+          Some Company Page
+        </PortfolioViewRectangleCaption>
+      </PortfolioViewRectangle>
+    </ProjectLink>,
+  },
     {
         id: 99,
-        component: <PortfolioViewRectangle
-          alt="astronomy quiz"
-          style={{ 
+        component: <ProjectLink to="/portfolio/astronomy-quiz">
+          <PortfolioViewRectangle
+            alt="astronomy quiz"
+            style={{ 
                 backgroundImage: `url(${AstronomyBg})`, 
                 backgroundPosition: "center-top", 
                 backgroundSize: "cover", 
                 backgroundRepeat: "no-repeat" }}
-        >
-          <PortfolioViewRectangleCaption>
-            <ProjectLink to="/portfolio/astronomy-quiz">
+          >
+            <PortfolioViewRectangleCaption>
               Astronomy Quiz
-            </ProjectLink>
-          </PortfolioViewRectangleCaption>
-        </PortfolioViewRectangle>,
+            </PortfolioViewRectangleCaption>
+          </PortfolioViewRectangle>
+        </ProjectLink>,
     },
     {
         id: 95,
-        component: <PortfolioViewRectangle
-          alt="Todolist"
-          style={{
+        component: <ProjectLink to="/portfolio/todolist">
+          <PortfolioViewRectangle
+            alt="Todolist"
+            style={{
                 backgroundImage: `url(${TodolistBg})`,
                 backgroundPosition: "center-top",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat"
             }}
-        >
-          <PortfolioViewRectangleCaption>
-            <ProjectLink to="/portfolio/todolist">To-Do List</ProjectLink>
-          </PortfolioViewRectangleCaption>
-        </PortfolioViewRectangle>,
-    },
-    {
-        id: 94,
-        component: <PortfolioViewRectangle
-          alt="SomeCompanyPage"
-          style={{ 
-                backgroundImage: `url(${someCompanyPageBg})`, 
-                backgroundPosition: "center-top", 
-                backgroundSize: "cover", 
-                backgroundRepeat: "no-repeat" }}
-        >
-          <PortfolioViewRectangleCaption>
-            <ProjectLink to="/portfolio/some-company-page">
-              Some Company Page
-            </ProjectLink>
-          </PortfolioViewRectangleCaption>
-        </PortfolioViewRectangle>,
+          >
+            <PortfolioViewRectangleCaption>
+              To-Do List
+            </PortfolioViewRectangleCaption>
+          </PortfolioViewRectangle>
+        </ProjectLink>,
     },
 ]
 
