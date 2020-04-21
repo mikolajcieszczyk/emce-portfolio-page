@@ -8,6 +8,10 @@ const ContactViewWrapper = styled.div`
   justify-content: center;
 
   height: 500px;
+
+  @media (max-width: 575.98px) { 
+    grid-template-columns: 1fr;
+   }
 `;
 
 const ContactViewTitle = styled.h2`
@@ -19,6 +23,13 @@ const ContactViewTitle = styled.h2`
    text-transform: uppercase;
 
    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+   @media (max-width: 575.98px) { 
+    align-self: end;
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+   }
 
    @keyframes text-focus-in {
   0% {
@@ -35,10 +46,12 @@ const ContactViewTitle = styled.h2`
 `;
 
 const ContactViewData = styled.div`
-  
-
   p {
     text-align: left;
+
+    @media (max-width: 575.98px) { 
+    text-align: center;
+   }
 
     a {
     color: #fff;
@@ -46,7 +59,11 @@ const ContactViewData = styled.div`
     font-weight: 900;
     text-decoration: underline;
     text-decoration-color: #FFE48F;
-  }
+
+    @media (max-width: 575.98px) { 
+    font-size: 20px;
+   }
+   }
   }
 `;
 
@@ -58,9 +75,9 @@ function ContactView() {
         </ContactViewTitle>
         <ContactViewData>
           <p><a href="mailto:mikolaj.cieszczyk@gmail.com">mikolaj.cieszczyk@gmail.com</a></p>
-          <p><a href="https://github.com/mikolajcieszczyk" target="_blank">GitHub</a></p>
           <p><a href="https://www.linkedin.com/in/mikolajcieszczyk/" target="_blank">LinkedIn</a></p>
           <p><a href="https://www.facebook.com/mikolaj.cieszczyk/" target="_blank">Facebook</a></p>
+          <p><a href="https://github.com/mikolajcieszczyk" target="_blank">GitHub</a></p>
         </ContactViewData>
 
       </ContactViewWrapper>

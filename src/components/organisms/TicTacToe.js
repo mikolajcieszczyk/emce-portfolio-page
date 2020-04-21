@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import TictactoeBg from 'assets/images/tictactoe-img.png';
-import htmlIcon from 'assets/images/icons8-html-5-144.png';
-import cssIcon from 'assets/images/icons8-css3-144.png';
-import bootstrapIcon from 'assets/images/icons8-bootstrap-144.png';
-import jqueryIcon from 'assets/images/iconfinder_jquery_308442.png';
-import jsIcon from 'assets/images/icons8-javascript-144.png';
-import githubIcon from 'assets/images/GitHub-Mark-Light-120px-plus.png';
+import TictactoeBg from 'assets/images/tictactoeImg.png';
+import htmlIcon from 'assets/images/htmlIcon.png';
+import cssIcon from 'assets/images/cssIcon.png';
+import bootstrapIcon from 'assets/images/bootstrapIcon.png';
+import jqueryIcon from 'assets/images/jqueryIcon.png';
+import jsIcon from 'assets/images/jsIcon.png';
+import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
 const ProjectTitle = styled.h2`
   color: #FFE48F;
   margin: 2% 0 1%;
 
-  text-transform: uppercase;
+  text-transform: capitalize;
 `;
 
 const ProjectWrapper = styled.div`
@@ -23,6 +23,10 @@ const ProjectWrapper = styled.div`
   grid-gap: 1rem;
 
   height: 250px;
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: 1fr;
+   }
 `;
 
 const ProjectStack = styled.div`
@@ -31,19 +35,37 @@ const ProjectStack = styled.div`
   align-items: center;
 
   font-weight: 700;
+
+  @media (max-width: 575.98px) { 
+    grid-template-columns: repeat(3, 1fr);
+   }
+
+   @media (min-width: 767.98px) { 
+    grid-template-columns: repeat(5, 1fr);
+   }
+   
+   @media (min-width: 992px) { 
+     grid-template-columns: repeat(2, 1fr);
+   }
+   
 `;
 
 const ProjectImage = styled.div`
   background-image: url(${TictactoeBg});
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (max-width: 991.98px) { 
+    display: none;
+   }
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
-
+  
   p {
     text-align: justify;
+    margin-bottom: 5%;
 
     span {
       color: #FFE48F; 
@@ -67,6 +89,10 @@ const ProjectLinks = styled.div`
     color: #FFE48F;
     font-weight: 700;
   }
+
+  @media (max-width: 991.98px) { 
+    margin-bottom: 5%;
+   }
 `;
 
 function TicTacToe() {
@@ -134,7 +160,7 @@ function TicTacToe() {
             któż z nas nie grał w czasie lekcji z kolegą z ławki ;-) Aplikacja zaprogramowana 
             {' '}
             <span>do gry w dwie osoby</span>
-            , daje możliwość (właściwie to wymusza ;) ustawienia imion graczy. Po skończonej rundzie wyświetla komunikat o zwycięzcy, a następnie losuje osobę, która rozpocznie kolejną rundę. <span>Doskonały zabijacz czasu!</span>
+            , daje możliwość (gwoli ścisłości to wymusza ;) zdefiniowania imion graczy. Po skończonej rundzie wyświetla komunikat o zwycięzcy, a następnie losuje osobę, która rozpocznie kolejną rundę. <span>Doskonały zabijacz czasu!</span>
           </p>
 
           <ProjectLinks>

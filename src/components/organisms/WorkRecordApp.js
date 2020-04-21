@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import WorkRecordBg from 'assets/images/workhour-record-app-img.png';
-import htmlIcon from 'assets/images/icons8-html-5-144.png';
+import WorkRecordBg from 'assets/images/wraImg.png';
+import htmlIcon from 'assets/images/htmlIcon.png';
 import sassIcon from 'assets/images/icons8-sass-avatar-144.png';
-import jqueryIcon from 'assets/images/iconfinder_jquery_308442.png';
-import jsIcon from 'assets/images/icons8-javascript-144.png';
-import mongoIcon from 'assets/images/mongodb-icon.png';
-import expressIcon from 'assets/images/expressjs-icon.png';
-import githubIcon from 'assets/images/GitHub-Mark-Light-120px-plus.png';
+import jqueryIcon from 'assets/images/jqueryIcon.png';
+import jsIcon from 'assets/images/jsIcon.png';
+import mongoIcon from 'assets/images/mongoIcon.png';
+import expressIcon from 'assets/images/expressJsIcon.png';
+import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
 const ProjectTitle = styled.h2`
   color: #FFE48F;
   margin: 2% 0 1%;
 
-  text-transform: uppercase;
+  text-transform: capitalize;
 `;
 
 const ProjectWrapper = styled.div`
@@ -24,6 +24,10 @@ const ProjectWrapper = styled.div`
   grid-gap: 1rem;
 
   height: 250px;
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: 1fr;
+   }
 `;
 
 const ProjectStack = styled.div`
@@ -32,12 +36,27 @@ const ProjectStack = styled.div`
   align-items: center;
 
   font-weight: 700;
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: repeat(3, 1fr);
+
+    figcaption {
+    margin-bottom: 2%;
+
+    }
+   }
 `;
 
 const ProjectImage = styled.div`
   background-image: url(${WorkRecordBg});
-  background-size: cover;
+  background-color: #5A0A4F;
+  background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
+
+  @media (max-width: 991.98px) { 
+    display: none;
+   }
 `;
 
 const ProjectDesc = styled.div`
@@ -46,6 +65,7 @@ const ProjectDesc = styled.div`
   p {
     font-size: 14px;
     text-align: justify;
+    margin-bottom: 5%;
 
     span {
       color: #FFE48F; 
@@ -69,6 +89,10 @@ const ProjectLinks = styled.div`
     color: #FFE48F;
     font-weight: 700;
   }
+
+  @media (max-width: 991.98px) { 
+    margin-bottom: 5%;
+   }
 `;
 
 function WorkRecordApp() {

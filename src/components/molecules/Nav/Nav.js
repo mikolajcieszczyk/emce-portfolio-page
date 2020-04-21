@@ -8,7 +8,11 @@ const NavWrapper = styled.div`
   width: 100%;
 
   margin-right: 1%;
-  `;
+
+  @media (max-width: 575.98px) { 
+    justify-content: center;
+   }
+`;
 
 const NavigationLink = styled(NavLink)`
   color: rgba(255, 253, 248, 1);
@@ -16,6 +20,10 @@ const NavigationLink = styled(NavLink)`
   text-decoration: none;
 
   margin: 1%; 
+
+  @media (max-width: 575.98px) { 
+    font-size: 1em;
+   }
 `;
 
 const navTitles = [

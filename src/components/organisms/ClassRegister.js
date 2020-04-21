@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import NjscrBg from 'assets/images/nodejsclasregister-img.png';
-import reactIcon from 'assets/images/iconfinder_React.js_logo_1174949.png';
-import scIcon from 'assets/images/styled-components.png';
-import sbIcon from 'assets/images/storybook-icon.png';
-import adIcon from 'assets/images/atomicdesign.png';
-import githubIcon from 'assets/images/GitHub-Mark-Light-120px-plus.png';
+import NjscrBg from 'assets/images/ncrImg.png';
+import reactIcon from 'assets/images/reactIcon.png';
+import scIcon from 'assets/images/scIcon.png';
+import sbIcon from 'assets/images/storybookIcon.png';
+import adIcon from 'assets/images/atomicDesignIcon.png';
+import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
 const ProjectTitle = styled.h2`
   color: #FFE48F;
   margin: 2% 0 1%;
 
-  text-transform: uppercase;
+  text-transform: capitalize;
 `;
 
 const ProjectWrapper = styled.div`
@@ -22,6 +22,10 @@ const ProjectWrapper = styled.div`
   grid-gap: 1rem;
 
   height: 250px;
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: 1fr;
+   }
 `;
 
 const ProjectStack = styled.div`
@@ -30,20 +34,38 @@ const ProjectStack = styled.div`
   align-items: center;
 
   font-weight: 700;
+
+   @media (max-width: 575.98px) { 
+    grid-template-columns: repeat(2, 1fr);
+   }
+
+   @media (min-width: 767.98px) { 
+    grid-template-columns: repeat(4, 1fr);
+   }
+
+   @media (min-width: 992px) { 
+     grid-template-columns: repeat(2, 1fr);
+   }
 `;
 
 const ProjectImage = styled.div`
   background-image: url(${NjscrBg});
-  background-size: cover;
+  background-color: #F8F7F9;
+  background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
+
+  @media (max-width: 991.98px) { 
+    display: none;
+   }
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
-
   p {
     text-align: justify;
-
+    margin-bottom: 5%;
+    
     span {
       color: #FFE48F; 
     }
@@ -66,13 +88,17 @@ const ProjectLinks = styled.div`
     color: #FFE48F;
     font-weight: 700;
   }
+
+  @media (max-width: 991.98px) { 
+    margin-bottom: 5%;
+   }
 `;
 
 function ClassRegister() {
     return (
       <>
         <ProjectTitle>
-          Nodejs class register
+          Node.JS class register
         </ProjectTitle>
         <ProjectWrapper>
           <ProjectStack>
@@ -118,9 +144,9 @@ function ClassRegister() {
           <ProjectImage />
           <ProjectDesc>
             <p>
-              <span>Dziennik elektroniczny</span>
+              <span>Projekt dziennika elektronicznego</span>
               {' '}
-              we wczesnej fazie produkcyjnej w której odpowiadam za front-end. Jest już cała struktura folderów i komponentów zaprojektowana zgodnie z Atomic Design, zrobiony podgląd komponentów w StoryBook oraz zakodowane przekazywanie propsów w nawigacji do widoku Admina, Ucznia oraz Nauczyciela. Prace w toku.
+              we wczesnej fazie produkcyjnej. Odpowiadam w nim za front-end. Jest już cała struktura folderów i komponentów zaprojektowana zgodnie z Atomic Design, zrobiony podgląd komponentów w StoryBook oraz zakodowane przekazywanie propsów w nawigacji do widoku Admina, Ucznia oraz Nauczyciela. Prace w toku.
             </p>
 
             <ProjectLinks>

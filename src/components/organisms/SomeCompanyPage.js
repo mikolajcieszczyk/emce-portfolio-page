@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import someCompanyPageBg from 'assets/images/somecompanypage-img.png';
-import htmlIcon from 'assets/images/icons8-html-5-144.png';
+import someCompanyPageBg from 'assets/images/scpImg.png';
+import htmlIcon from 'assets/images/htmlIcon.png';
 import sassIcon from 'assets/images/icons8-sass-avatar-144.png';
-import bootstrapIcon from 'assets/images/icons8-bootstrap-144.png';
-import jqueryIcon from 'assets/images/iconfinder_jquery_308442.png';
-import jsIcon from 'assets/images/icons8-javascript-144.png';
-import githubIcon from 'assets/images/GitHub-Mark-Light-120px-plus.png';
+import bootstrapIcon from 'assets/images/bootstrapIcon.png';
+import jqueryIcon from 'assets/images/jqueryIcon.png';
+import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
 const ProjectTitle = styled.h2`
   color: #FFE48F;
   margin: 2% 0 1%;
 
-  text-transform: uppercase;
+  text-transform: capitalize;
 `;
 
 const ProjectWrapper = styled.div`
@@ -23,6 +22,10 @@ const ProjectWrapper = styled.div`
   grid-gap: 1rem;
 
   height: 250px;
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: 1fr;
+   }
 `;
 
 const ProjectStack = styled.div`
@@ -31,16 +34,28 @@ const ProjectStack = styled.div`
   align-items: center;
 
   font-weight: 700;
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: repeat(4, 1fr);
+   }
 `;
 
 const ProjectImage = styled.div`
   background-image: url(${someCompanyPageBg});
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (max-width: 991.98px) { 
+    display: none;
+   }
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
+
+  p {
+    margin-bottom: 5%;
+  }
 `;
 
 const ProjectLinks = styled.div`
@@ -59,6 +74,10 @@ const ProjectLinks = styled.div`
     color: #FFE48F;
     font-weight: 700;
   }
+
+  @media (max-width: 991.98px) { 
+    margin-bottom: 5%;
+   }
 `;
 
 function SomeCompanyPage() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ViewTitle from 'components/atoms/ViewTitle';
 import { mainTechnologies, secondaryTechnologies,  additionalTechnologies } from 'assets/data/viewsData';
 
 const StackViewMainWrapper = styled.div`
@@ -10,35 +11,17 @@ const StackViewMainWrapper = styled.div`
   flex-direction: column;
 `;
 
-const StackViewTitle = styled.h2`
-   color: #FFE48F;
-   text-align: ${props => props.left ? "left" : "center"};
-   text-transform: uppercase;
-
-   margin: 1% 0;
-
-   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-
-   @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-`;
-
 const StackViewLineWrapper = styled.div`
   width: 100%;
 
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+
+  @media (max-width: 575.98px) { 
+    flex-flow: column wrap;
+    align-items: center;
+   }
 `;
 
 const StackViewSquareWrapper = styled.div`
@@ -47,6 +30,10 @@ const StackViewSquareWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+
+  @media (max-width: 575.98px) { 
+    width: 100%;
+   }
 `;
 
 const StackViewColumnWrapper = styled.div`
@@ -55,6 +42,12 @@ const StackViewColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 575.98px) { 
+
+
+    margin-top: 5%;
+   }
 `;
 
 const StackViewImage = styled.figure`
@@ -67,6 +60,16 @@ const StackViewImage = styled.figure`
 
   cursor: pointer;
 
+  @media (max-width: 575.98px) { 
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 40%;
+   }
+
+   @media (min-width: 576px) { 
+    justify-content: flex-start
+   }
+
   &:hover {
     opacity: 0.2;
   }
@@ -75,6 +78,14 @@ const StackViewImage = styled.figure`
       margin: 2%;
       font-weight: 700;
       width: 150px;
+
+      @media (max-width: 575.98px) { 
+        font-weight: 400;
+      }
+
+      @media (max-width: 991.98px) { 
+        width: 100px;
+      }
   }
 `;
 
@@ -118,9 +129,7 @@ function StackView() {
       <StackViewMainWrapper>
 
         <StackViewLineWrapper>
-          <StackViewTitle>
-            głównie koduję w technologiach
-          </StackViewTitle>
+          <ViewTitle title="głównie koduję w technologiach" />
         </StackViewLineWrapper>
 
         <StackViewLineWrapper>
@@ -128,12 +137,8 @@ function StackView() {
         </StackViewLineWrapper>
 
         <StackViewLineWrapper>
-          <StackViewTitle>
-            ponadto używam
-          </StackViewTitle>
-          <StackViewTitle>
-            zgodnie z zasadami
-          </StackViewTitle>
+          <ViewTitle title="ponadto używam" />
+          
         </StackViewLineWrapper>
 
         <StackViewLineWrapper>
@@ -142,6 +147,7 @@ function StackView() {
           </StackViewSquareWrapper>
 
           <StackViewSquareWrapper>
+            <ViewTitle title="zgodnie z zasadami" />
             <StackViewColumnWrapper>
               {mapAdditionalTechnologies}
             </StackViewColumnWrapper>

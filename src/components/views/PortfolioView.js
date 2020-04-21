@@ -5,8 +5,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useParams
+    Link
 } from "react-router-dom";
 
 import TicTacToe from 'components/organisms/TicTacToe';
@@ -16,6 +15,7 @@ import ClassRegister from 'components/organisms/ClassRegister';
 import Todolist from 'components/organisms/Todolist';
 import SomeCompanyPage from 'components/organisms/SomeCompanyPage';
 
+import ViewTitle from 'components/atoms/ViewTitle';
 import { projectTiles } from 'assets/data/viewsData';
 
 const PortfolioViewWrapper = styled.div`
@@ -27,41 +27,16 @@ const PortfolioViewWrapper = styled.div`
   width: 100%;
 `;
 
-const PortfolioViewTitle = styled.h2`
-   color: #FFE48F;
-   text-align: ${props => props.left ? "left" : "center"};
-   text-transform: uppercase;
-
-   margin: 1% 0;
-
-   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-
-   @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-span {
-  display: block;
-  font-size: 10px;
-  color: #fff;
-}
-`;
-
 const PortfolioViewGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
 
   width: 100%;
+
+  @media (max-width: 575.98px) { 
+    grid-template-columns: repeat(3, 1fr);
+   }
 `;
 
 export const PortfolioViewRectangle = styled.div`
@@ -79,6 +54,10 @@ export const PortfolioViewRectangleCaption = styled.div`
 
   background: #FFE48F;
   color: #000;
+
+  @media (max-width: 991.98px) { 
+    font-size: 10px;
+   }
 `;
 
 export const ProjectLink = styled(Link)`
@@ -99,9 +78,7 @@ function PortfolioView() {
     return (
       <Router>
         <PortfolioViewWrapper>
-          <PortfolioViewTitle>
-            wybrane projekty <span>[najnowsze od lewej]</span>
-          </PortfolioViewTitle>
+          <ViewTitle title="wybrane projekty" span="[najnowsze od lewej]" />
           <PortfolioViewGrid>
             {mapProjectsTiles}
           </PortfolioViewGrid>

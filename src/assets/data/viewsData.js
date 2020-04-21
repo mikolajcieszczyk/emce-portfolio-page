@@ -1,32 +1,32 @@
 import React from 'react';
 
-import htmlIcon from 'assets/images/icons8-html-5-144.png';
-import cssIcon from 'assets/images/icons8-css3-144.png';
+import htmlIcon from 'assets/images/htmlIcon.png';
+import cssIcon from 'assets/images/cssIcon.png';
 import sassIcon from 'assets/images/icons8-sass-avatar-144.png';
-import jsIcon from 'assets/images/icons8-javascript-144.png';
-import reactIcon from 'assets/images/iconfinder_React.js_logo_1174949.png';
-import jqueryIcon from 'assets/images/iconfinder_jquery_308442.png';
-import bootstrapIcon from 'assets/images/icons8-bootstrap-144.png';
-import scIcon from 'assets/images/styled-components.png';
-import npmIcon from 'assets/images/icons8-npm-144.png';
-import sbIcon from 'assets/images/storybook-icon.png';
-import adIcon from 'assets/images/atomicdesign.png';
-import githubIcon from 'assets/images/GitHub-Mark-Light-120px-plus.png';
-import gitIcon from 'assets/images/Git-Logo-White.png';
-import yarnIcon from 'assets/images/yarn-icon.png';
-import vscodeIcon from 'assets/images/vscode-icon.png';
-import xdIcon from 'assets/images/xd-icon.png';
-import eslintIcon from 'assets/images/eslint-icon.png';
+import jsIcon from 'assets/images/jsIcon.png';
+import reactIcon from 'assets/images/reactIcon.png';
+import jqueryIcon from 'assets/images/jqueryIcon.png';
+import bootstrapIcon from 'assets/images/bootstrapIcon.png';
+import scIcon from 'assets/images/scIcon.png';
+import npmIcon from 'assets/images/npmIcon.png';
+import sbIcon from 'assets/images/storybookIcon.png';
+import adIcon from 'assets/images/atomicDesignIcon.png';
+import githubIcon from 'assets/images/githubIcon.png';
+import gitIcon from 'assets/images/gitIcon.png';
+import yarnIcon from 'assets/images/yarnIcon.png';
+import vscodeIcon from 'assets/images/vsCodeIcon.png';
+import xdIcon from 'assets/images/xdIcon.png';
+import eslintIcon from 'assets/images/esLintIcon.png';
 import { TabletMobileCombo } from '@styled-icons/entypo';
 import { MobileFriendly } from '@styled-icons/material-outlined';
 import { Search } from '@styled-icons/fa-solid';
 
-import AstronomyBg from 'assets/images/astronomy-quiz-img.png';
-import TictactoeBg from 'assets/images/tictactoe-img.png';
-import TodolistBg from 'assets/images/todo-list-img.png';
-import WorkRecordBg from 'assets/images/workhour-record-app-img.png';
-import NjscrBg from 'assets/images/nodejsclasregister-img.png';
-import someCompanyPageBg from 'assets/images/somecompanypage-img.png';
+import AstronomyBg from 'assets/images/astronomyQuizImg.png';
+import TictactoeBg from 'assets/images/tictactoeImg.png';
+import TodolistBg from 'assets/images/todoListImg.png';
+import WorkRecordBg from 'assets/images/wraImg.png';
+import NjscrBg from 'assets/images/ncrImg.png';
+import someCompanyPageBg from 'assets/images/scpImg.png';
 
 import { PortfolioViewRectangle, PortfolioViewRectangleCaption, ProjectLink } from 'components/views/PortfolioView';
 
@@ -41,7 +41,7 @@ export const projectTiles = [
           backgroundImage: `url(${NjscrBg})`,
           backgroundPosition: "center-top",
           backgroundSize: "cover",
-          backgroundRepeat: "no-repeat"
+          backgroundRepeat: "no-repeat",
         }}
       >
         <PortfolioViewRectangleCaption>
