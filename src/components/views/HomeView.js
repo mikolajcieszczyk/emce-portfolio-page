@@ -12,7 +12,11 @@ const HomeViewWrapper = styled.div`
 `;
 
 const HomeViewLeft = styled.div`
-margin-right: 1%;
+  width: 50%;
+
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1%;
 `;
 
 const HomeViewRight = styled.div`
@@ -30,7 +34,7 @@ const HomeViewName = styled.h1`
   margin-bottom: 1%;
   font-family: 'Paytone One', sans-serif;
   font-size: 4em;
-  letter-spacing: 10px;
+  letter-spacing: 12px;
   text-align: left;
   color: #FFE48F;
   line-height: 1;
@@ -48,6 +52,7 @@ const HomeViewPosition = styled.h2`
   margin-bottom: 5%;
   line-height: 2;
   text-align: left;
+  letter-spacing: 2.5px;
 
   @media (max-width: 575.98px) { 
     margin: 0;
@@ -58,7 +63,7 @@ const HomeViewPosition = styled.h2`
 const HomeViewWelcome = styled.div`
 text-align: left;
   p {
-    font-size: 2em;
+    font-size: 20px;
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
@@ -131,7 +136,7 @@ function HomeView() {
           src={mikolajPhoto}
           alt="Mikolaj"
           style={{
-            width: '100%'
+            width: '70%'
           }}
         />
       </HomeViewLeft>

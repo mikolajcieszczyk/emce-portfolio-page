@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <PageWrapper>
-        <div className="App">
+        <div>
           <BrowserRouter>
           <Nav />
             <Switch>

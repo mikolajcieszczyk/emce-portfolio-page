@@ -16,7 +16,7 @@ const NavWrapper = styled.div`
 
 const NavigationLink = styled(NavLink)`
   color: rgba(255, 253, 248, 1);
-  font-size: 24px;
+  font-size: 20px;
   text-decoration: none;
 
   margin: 1%; 
@@ -37,7 +37,8 @@ const showNavTitles = navTitles.map((element) => (
   <NavigationLink
     exact
     activeStyle={{
-            fontWeight: "900",
+            // fontWeight: "900",
+            color: "#FFE48F",
         }}
     key={element.id}
     to={element.path}
