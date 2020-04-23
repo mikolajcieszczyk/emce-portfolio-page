@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import {
@@ -17,6 +17,7 @@ import SomeCompanyPage from 'components/organisms/SomeCompanyPage';
 
 import ViewTitle from 'components/atoms/ViewTitle';
 import { projectTiles } from 'assets/data/viewsData';
+
 
 const PortfolioViewWrapper = styled.div`
   display: flex;
@@ -43,7 +44,9 @@ export const PortfolioViewRectangleContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-   
+   &:hover {
+     opacity: 0.8;
+   }
 `;
 
 export const PortfolioViewRectangle = styled.div`
