@@ -9,75 +9,75 @@ import adIcon from 'assets/images/atomicDesignIcon.png';
 import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
-const ProjectTitle = styled.h2`
+const ProjectWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
+
+  height: 40vh;
+  margin: 3% 0 15%;
+`;
+
+const ProjectTitle = styled.h3`
+  display: grid;
+  align-items: center;
   color: #FFE48F;
-  margin: 2% 0 1%;
 
   text-transform: capitalize;
 `;
 
-const ProjectWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-gap: 1rem;
-
-  height: 250px;
-
-  @media (max-width: 991.98px) { 
-    grid-template-columns: 1fr;
-   }
-`;
-
-const ProjectStack = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-
-  font-weight: 700;
-
-   @media (max-width: 575.98px) { 
-    grid-template-columns: repeat(2, 1fr);
-   }
-
-   @media (min-width: 767.98px) { 
-    grid-template-columns: repeat(4, 1fr);
-   }
-
-   @media (min-width: 992px) { 
-     grid-template-columns: repeat(2, 1fr);
-   }
-`;
-
 const ProjectImage = styled.div`
   background-image: url(${NjscrBg});
-  background-color: #F8F7F9;
+  background-size: cover;
   background-position: center;
-  background-size: contain;
   background-repeat: no-repeat;
 
-  @media (max-width: 991.98px) { 
-    display: none;
-   }
+  height: 400px;
+
+  border: 2px solid #FFE48F;
+  border-radius: 20px;
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
-  p {
-    text-align: justify;
-    margin-bottom: 5%;
-    
-    span {
-      color: #FFE48F; 
-    }
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: stretch;
+
+  height: 400px;
+`;
+
+const ProjectText = styled.p`
+  text-align: justify;
+  margin-bottom: 2%;
+
+  span { 
+    color: #FFE48F;
+  }
+`;
+
+const ProjectTech = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  margin-bottom: 5%;
+
+  figure {
+    text-align: center;
+  }
+
+  figcaption {
+    font-size: 12px;
+    font-weight: 400;
   }
 `;
 
 const ProjectLinks = styled.div`
   display: grid;
-
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 
-  align-items: end;
 
   a {
     color: white;
@@ -86,92 +86,84 @@ const ProjectLinks = styled.div`
 
   figcaption {
     color: #FFE48F;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
   }
-
-  @media (max-width: 991.98px) { 
-    margin-bottom: 5%;
-   }
 `;
 
 function ClassRegister() {
-    return (
-      <>
+  return (
+    <ProjectWrapper>
+      <ProjectImage />
+      <ProjectDesc>
         <ProjectTitle>
-          Node.JS class register
+          NodeJS Class Register
         </ProjectTitle>
-        <ProjectWrapper>
-          <ProjectStack>
+        <ProjectText>
+          <span>Projekt dziennika elektronicznego</span>
+          {' '}
+          we wczesnej fazie produkcyjnej. Odpowiadam w nim za front-end. Jest już cała struktura folderów i komponentów zaprojektowana zgodnie z Atomic Design, zrobiony podgląd komponentów w StoryBook oraz zakodowane przekazywanie propsów w nawigacji do widoku Admina, Ucznia oraz Nauczyciela. Prace w toku.
+        </ProjectText>
+        <ProjectTech>
+          <figure>
+            <img
+              src={reactIcon}
+              alt="React"
+              style={{ width: "30px", height: "30px" }}
+            />
+            <figcaption>React</figcaption>
+          </figure>
 
-            <figure>
+
+          <figure>
+            <img
+              src={scIcon}
+              alt="Styled Components"
+              style={{ width: "30px", height: "30px" }}
+            />
+            <figcaption>Styled Components</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src={sbIcon}
+              alt="StoryBook"
+              style={{ width: "30px", height: "30px" }}
+            />
+            <figcaption>StoryBook</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src={adIcon}
+              alt="Atomic Design"
+              style={{ width: "30px", height: "30px" }}
+            />
+            <figcaption>Atomic Design</figcaption>
+          </figure>
+        </ProjectTech>
+        <ProjectLinks>
+          <figure>
+            <a href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" target="_blank">
               <img
-                src={reactIcon}
-                alt="React"
+                src={githubIcon}
+                alt="GitHub"
                 style={{ width: "50px", height: "50px" }}
               />
-              <figcaption>React</figcaption>
-            </figure>
-
-
-            <figure>
-              <img
-                src={scIcon}
-                alt="Styled Components"
-                style={{ width: "50px", height: "50px" }}
-              />
-              <figcaption>Styled Components</figcaption>
-            </figure>
-
-            <figure>
-              <img
-                src={sbIcon}
-                alt="StoryBook"
-                style={{ width: "45px", height: "45px" }}
-              />
-              <figcaption>StoryBook</figcaption>
-            </figure>
-
-            <figure>
-              <img
-                src={adIcon}
-                alt="Atomic Design"
-                style={{ width: "45px", height: "45px" }}
-              />
-              <figcaption>Atomic Design</figcaption>
-            </figure>
-
-          </ProjectStack>
-          <ProjectImage />
-          <ProjectDesc>
-            <p>
-              <span>Projekt dziennika elektronicznego</span>
-              {' '}
-              we wczesnej fazie produkcyjnej. Odpowiadam w nim za front-end. Jest już cała struktura folderów i komponentów zaprojektowana zgodnie z Atomic Design, zrobiony podgląd komponentów w StoryBook oraz zakodowane przekazywanie propsów w nawigacji do widoku Admina, Ucznia oraz Nauczyciela. Prace w toku.
-            </p>
-
-            <ProjectLinks>
-              <figure>
-                <a href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" target="_blank">
-                  <img
-                    src={githubIcon}
-                    alt="GitHub"
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                  <figcaption>Kod</figcaption>
-                </a>
-              </figure>
-              <figure>
-                <a href="#" target="_blank">
-                  <Web size="56px" />
-                  <figcaption>Zobacz</figcaption>
-                </a>
-              </figure>
-            </ProjectLinks>
-
-          </ProjectDesc>
-        </ProjectWrapper>
-      </>
-    );
-};
+              <figcaption>Kod</figcaption>
+            </a>
+          </figure>
+          <figure>
+            <a href="#" target="_blank">
+              <Web size="56px" />
+              <figcaption>Zobacz</figcaption>
+            </a>
+          </figure>
+        </ProjectLinks>
+      </ProjectDesc>
+    </ProjectWrapper>
+  )
+}
 
 export default ClassRegister;

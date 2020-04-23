@@ -13,7 +13,7 @@ import PortfolioView from 'components/views/PortfolioView';
 import ContactView from 'components/views/ContactView';
 
 const PageWrapper = styled.div`
-  width: 90%;
+  width: 80%;
   height: 100%;
 
   margin: 0 auto;

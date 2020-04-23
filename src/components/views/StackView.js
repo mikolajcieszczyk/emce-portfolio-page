@@ -27,9 +27,8 @@ const StackViewImage = styled.figure`
   grid-template-columns: 1fr;
   justify-items: center;
 
-  margin-bottom: 5%;
-
   figcaption {
+      margin: 5% 0;
       font-weight: 700;
       text-align: center;
   }
@@ -40,6 +39,8 @@ const MainTechnologies = styled.div`
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-items: center;
+
+  
 `;
 
 const SecondaryTechnologies = styled.div`
@@ -54,6 +55,14 @@ const AdditionalTechnologies = styled.div`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: start;
+
+  > div {
+    text-align: center;
+
+    p {
+      margin-top: 5%;
+    }
+  }
 `;
 
 function StackView() {
@@ -63,7 +72,6 @@ function StackView() {
         key={el.id}
         src={el.src}
         alt={el.alt}
-      // style={{ width: "120px", height: "120px" }}
       />
       <figcaption>{el.caption}</figcaption>
     </StackViewImage>
@@ -74,7 +82,7 @@ function StackView() {
         key={el.id}
         src={el.src}
         alt={el.alt}
-        style={{ width: "40px", height: "40px" }}
+        style={{ width: "60px", height: "60px" }}
       />
       <figcaption>{el.caption}</figcaption>
     </StackViewImage>
