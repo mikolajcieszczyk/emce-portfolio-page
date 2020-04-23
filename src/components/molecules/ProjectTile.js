@@ -1,27 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const PortfolioViewWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+import { Link } from "react-router-dom";
 
-  width: 100%;
-`;
 
-const PortfolioViewGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
-
-  width: 100%;
-
-  @media (max-width: 575.98px) { 
-    grid-template-columns: repeat(3, 1fr);
-   }
-`;
-
-const PortfolioViewRectangleContainer = styled.div`
+export const PortfolioViewRectangleContainer = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -30,7 +13,7 @@ const PortfolioViewRectangleContainer = styled.div`
    }
 `;
 
-const PortfolioViewRectangle = styled.div`
+export const PortfolioViewRectangle = styled.div`
   display: flex;
   height: 100px;
 
@@ -42,7 +25,7 @@ const PortfolioViewRectangle = styled.div`
 
 `;
 
-const PortfolioViewRectangleCaption = styled.div`
+export const PortfolioViewRectangleCaption = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +44,7 @@ const PortfolioViewRectangleCaption = styled.div`
   border-bottom-right-radius: 20px;
 `;
 
-const ProjectLink = styled(Link)`
+export const ProjectLink = styled(Link)`
   text-decoration: none;
   color: #000;
   font-weight: 700;
@@ -81,17 +64,19 @@ class ProjectTile extends React.Component {
         this.setState({ text: this.props.text })
     }
 
-    render() {
+    render(props) {
+        const { text } = this.state;
+
         return(
-          <ProjectLink to="/portfolio/nodejs-class-register">
+          <ProjectLink to={this.props.url}>
             <PortfolioViewRectangleContainer
               onMouseEnter={this.onMouseEnter.bind(this)}
               onMouseLeave={this.onMouseLeave.bind(this)}
             >
               <PortfolioViewRectangle
-                alt="node js class register"
+                alt={this.props.alt}
                 style={{
-                        backgroundImage: `url(${NjscrBg})`,
+                        backgroundImage: `url(${this.props.bg})`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
