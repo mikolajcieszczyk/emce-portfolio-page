@@ -11,7 +11,11 @@ const HomeViewWrapper = styled.div`
   width: 100%;
   height: 60vh;
 
-  margin-top: 7%;
+  margin-top: 7% auto 0;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr;
+   }
 `;
 
 const MikolajPhoto = styled.div`
@@ -19,23 +23,34 @@ const MikolajPhoto = styled.div`
   grid-template-columns: 1fr;
   justify-items: end;
   align-items: center;
+
+  @media (max-width: 767.98px) { 
+    justify-items: center;
+   }
 `;
 
 const MikolajPhotoImg = styled.img`
   width: 80%;
+
+  @media (max-width: 767.98px) { 
+    width: 60%;
+   }
 `;
 
 const WelcomeContent = styled.div`
   display: grid;
   grid-template-rows: repeat(4, 1fr);
+
+  @media (max-width: 767.98px) { 
+    grid-template-rows: 1fr 2fr 1fr 2fr;;
+    grid-column-gap: 10px;
+   }
 `;
 
 const MyNameIs = styled.div`
   display: grid;
   align-items: end;
   justify-content: start;
-
-  
 
   p {
     font-size: 20px;
@@ -73,12 +88,16 @@ const NameSurname = styled.div`
   display: grid;
   align-items: center;
   margin: 2% 0;
-  font-size: 60px;
+  font-size: 4em;
   font-weight: 900;
   text-align: left;
   text-transform: uppercase;
   color: #FFE48F;
   line-height: 1;
+
+  @media (max-width: 767.98px) { 
+    font-size: 3em;
+   }
 `;
 
 const MyPosition = styled.h2`
@@ -88,6 +107,11 @@ const MyPosition = styled.h2`
   font-size: 1.3em;
   font-weight: 100;
   letter-spacing: 5px;
+
+  @media (max-width: 767.98px) { 
+    font-size: 1em;
+    letter-spacing: 1px;
+   }
 `;
 
 const ButtonsContainer = styled.div`
@@ -95,15 +119,11 @@ const ButtonsContainer = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
 
-  margin: 8% 5% 0;
-  
-  
+  margin: 10% 11% 0;
 
   > button:first-child {
     margin-right: 5%;
   }
-
-  
 
   span {
   color: #FFE48F;
@@ -116,6 +136,11 @@ const ButtonsContainer = styled.div`
     opacity: .0;
     }
   }
+
+  @media (max-width: 767.98px) { 
+    justify-content: center;
+    margin: 0;
+   }
 `;
 
 function HomeView() {

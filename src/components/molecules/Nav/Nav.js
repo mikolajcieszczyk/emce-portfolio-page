@@ -7,11 +7,12 @@ const NavWrapper = styled.div`
   justify-content: flex-end;
   width: 100%;
 
-  margin-left: 3%;
+  margin-right: 5%;
 
 
   @media (max-width: 575.98px) { 
     justify-content: center;
+    margin: 0;
    }
 `;
 
