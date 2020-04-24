@@ -15,7 +15,7 @@ const StackViewWrapper = styled.div`
 const StackViewTitle = styled.div`
   display: grid;
   justify-items: center;
-  align-items: end;
+  align-items: start;
 `;
 
 const StackViewSubtitle = styled(StackViewTitle)`
@@ -38,9 +38,7 @@ const MainTechnologies = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
-  align-items: center;
-
-  
+  align-items: start;
 `;
 
 const SecondaryTechnologies = styled.div`

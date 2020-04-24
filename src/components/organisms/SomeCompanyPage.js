@@ -32,7 +32,7 @@ const ProjectWrapper = styled.div`
   }
 `;
 
-const ProjectTitle = styled.h3`
+const ProjectTitle = styled.h2`
   display: grid;
   align-items: center;
   color: #FFE48F;
