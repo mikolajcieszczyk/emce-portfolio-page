@@ -8,60 +8,89 @@ import jsIcon from 'assets/images/jsIcon.png';
 import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
-const ProjectTitle = styled.h2`
-  color: #FFE48F;
-  margin: 2% 0 1%;
-
-  text-transform: capitalize;
-`;
-
 const ProjectWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
 
-  height: 250px;
+  height: 40vh;
+  margin: 3% 0 15%;
 
-  @media (max-width: 991.98px) { 
-    grid-template-columns: 1fr;
-   }
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+  @keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
 `;
 
-const ProjectStack = styled.div`
+const ProjectTitle = styled.h2`
   display: grid;
   align-items: center;
+  color: #FFE48F;
 
-  font-weight: 700;
-
-  @media (max-width: 991.98px) { 
-    grid-template-columns: 1fr 1fr 1fr;
-   }
+  text-transform: capitalize;
 `;
 
 const ProjectImage = styled.div`
   background-image: url(${AstronomyBg});
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
-  @media (max-width: 991.98px) { 
-    display: none;
-   }
+  height: 400px;
+
+  border: 2px solid #FFE48F;
+  border-radius: 20px;
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: stretch;
 
-  p {
-    margin-bottom: 5%;
+  height: 400px;
+`;
+
+const ProjectText = styled.p`
+  text-align: justify;
+  margin-bottom: 2%;
+
+  span { 
+    color: #FFE48F;
+  }
+`;
+
+const ProjectTech = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  margin-bottom: 5%;
+
+  figure {
+    text-align: center;
+  }
+
+  figcaption {
+    font-size: 12px;
+    font-weight: 400;
   }
 `;
 
 const ProjectLinks = styled.div`
   display: grid;
-
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 
-  align-items: end;
 
   a {
     color: white;
@@ -70,82 +99,73 @@ const ProjectLinks = styled.div`
 
   figcaption {
     color: #FFE48F;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
   }
-
-  @media (max-width: 991.98px) { 
-    margin-bottom: 5%;
-   }
 `;
 
-function AstronomyQuiz() {
-    return (
-      <>
+function ClassRegister() {
+  return (
+    <ProjectWrapper>
+      <ProjectImage />
+      <ProjectDesc>
         <ProjectTitle>
           Astronomy Quiz
         </ProjectTitle>
-        <ProjectWrapper>
-          <ProjectStack>
+        <ProjectText>
+          Quiz z Astronomii zakodowany w czystym JS. Zmiana pytań za pomocą slidera.
+        </ProjectText>
+        <ProjectTech>
+          <figure>
+            <img
+              src={htmlIcon}
+              alt="HTML"
+              style={{ width: "30px", height: "30px" }}
+            />
+            <figcaption>HTML5</figcaption>
+          </figure>
 
-            <figure>
+
+          <figure>
+            <img
+              src={cssIcon}
+              alt="CSS"
+              style={{ width: "30px", height: "30px" }}
+            />
+            <figcaption>CSS3</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src={jsIcon}
+              alt="JavaScript"
+              style={{ width: "30px", height: "30px" }}
+            />
+            <figcaption>JavaScript</figcaption>
+          </figure>
+        </ProjectTech>
+        <ProjectLinks>
+          <figure>
+            <a href="https://github.com/mikolajcieszczyk/astronomy-quiz" target="_blank">
               <img
-                src={htmlIcon}
-                alt="HTML"
+                src={githubIcon}
+                alt="GitHub"
                 style={{ width: "50px", height: "50px" }}
               />
-              <figcaption>HTML5</figcaption>
-            </figure>
+              <figcaption>Kod</figcaption>
+            </a>
+          </figure>
+          <figure>
+            <a href="#" target="_blank">
+              <Web size="56px" />
+              <figcaption>Zobacz</figcaption>
+            </a>
+          </figure>
+        </ProjectLinks>
+      </ProjectDesc>
+    </ProjectWrapper>
+  )
+}
 
-
-            <figure>
-              <img
-                src={cssIcon}
-                alt="CSS"
-                style={{ width: "50px", height: "50px" }}
-              />
-              <figcaption>CSS3</figcaption>
-            </figure>
-
-            <figure>
-              <img
-                src={jsIcon}
-                alt="JavaScript"
-                style={{ width: "50px", height: "50px" }}
-              />
-              <figcaption>JavaScript</figcaption>
-            </figure>
-
-          </ProjectStack>
-          <ProjectImage />
-          <ProjectDesc>
-
-            <p>
-              Quiz z Astronomii zakodowany w czystym JS. Zmiana pytań za pomocą slidera.
-            </p>
-
-            <ProjectLinks>
-              <figure>
-                <a href="https://github.com/mikolajcieszczyk/astronomy-quiz" target="_blank">
-                  <img
-                    src={githubIcon}
-                    alt="GitHub"
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                  <figcaption>Kod</figcaption>
-                </a>
-              </figure>
-              <figure>
-                <a href="#" target="_blank">
-                  <Web size="56px" />
-                  <figcaption>Zobacz</figcaption>
-                </a>
-              </figure>
-            </ProjectLinks>
-
-          </ProjectDesc>
-        </ProjectWrapper>
-      </>
-    );
-};
-
-export default AstronomyQuiz;
+export default ClassRegister;

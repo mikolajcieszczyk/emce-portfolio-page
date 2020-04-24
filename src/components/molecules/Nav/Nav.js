@@ -7,16 +7,19 @@ const NavWrapper = styled.div`
   justify-content: flex-end;
   width: 100%;
 
-  margin-right: 1%;
+  margin-right: 5%;
+
 
   @media (max-width: 575.98px) { 
     justify-content: center;
+    margin: 0;
    }
 `;
 
 const NavigationLink = styled(NavLink)`
   color: rgba(255, 253, 248, 1);
-  font-size: 24px;
+  font-size: 14px;
+  font-weight: 100;
   text-decoration: none;
 
   margin: 1%; 
@@ -37,7 +40,8 @@ const showNavTitles = navTitles.map((element) => (
   <NavigationLink
     exact
     activeStyle={{
-            fontWeight: "900",
+            fontWeight: "300",
+            color: "#FFE48F",
         }}
     key={element.id}
     to={element.path}

@@ -1,106 +1,78 @@
 import React from 'react';
 import styled from 'styled-components';
-import mikolajPhoto from 'assets/images/mikolaj.jpg';
+import mikolajPhoto from 'assets/images/mikolaj.png';
+import {Button} from 'components/atoms/Button';
 
 const HomeViewWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-column-gap: 5rem;
 
-  @media (max-width: 575.98px) { 
-    flex-direction: column;
+  width: 100%;
+  height: 60vh;
+
+  margin-top: 7% auto 0;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr;
    }
 `;
 
-const HomeViewLeft = styled.div`
-margin-right: 1%;
-`;
+const MikolajPhoto = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: end;
+  align-items: center;
 
-const HomeViewRight = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media (max-width: 575.98px) { 
-    width: 90%;
+  @media (max-width: 767.98px) { 
+    justify-items: center;
    }
 `;
 
-const HomeViewName = styled.h1`
-  margin-bottom: 1%;
-  font-family: 'Paytone One', sans-serif;
-  font-size: 4em;
-  letter-spacing: 10px;
-  text-align: left;
-  color: #FFE48F;
-  line-height: 1;
+const MikolajPhotoImg = styled.img`
+  width: 80%;
 
-  @media (max-width: 575.98px) { 
-    font-size: 2em;
+  @media (max-width: 767.98px) { 
+    width: 60%;
    }
+`;
 
-   @media (max-width: 767.98px) { 
-     font-size: 3em;
+const WelcomeContent = styled.div`
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+
+  @media (max-width: 767.98px) { 
+    grid-template-rows: 1fr 2fr 1fr 2fr;;
+    grid-column-gap: 10px;
+   }
+`;
+
+const MyNameIs = styled.div`
+  display: grid;
+  align-items: end;
+  justify-content: start;
+
+  p {
+    font-size: 20px;
+    font-weight: 200;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation: type 1s steps(60, end);
+
+
+    span {
+      font-weight: 300;
     }
-`;
 
-const HomeViewPosition = styled.h2`
-  margin-bottom: 5%;
-  line-height: 2;
-  text-align: left;
-
-  @media (max-width: 575.98px) { 
-    margin: 0;
-    font-size: 1em;
-   }
-`;
-
-const HomeViewWelcome = styled.div`
-text-align: left;
-  p {
-    font-size: 2em;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-
-    @media (max-width: 575.98px) { 
-    font-size: 1em;
-   }
-  }
-
-  @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-
-`;
-
-const HomeViewContent = styled.div`
-  text-align: left;
-  p {
-    font-size: 3em;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-    margin-bottom: 5%;
-    animation: type 3s steps(60, end);
-
-    @media (max-width: 575.98px) { 
-    font-size: 1em;
-   }
-
-   @media (min-width: 767.98px) { 
-     font-size: 2em;
+    span:last-child {
+      color: #FFE48F;
+      animation: blink 1s infinite;
+      }
+    @keyframes blink{
+      to {
+        opacity: .0;
+        }
     }
   }
 
@@ -108,6 +80,49 @@ const HomeViewContent = styled.div`
   from {
     width: 0;
     }
+  }
+}
+`;
+
+const NameSurname = styled.div`
+  display: grid;
+  align-items: center;
+  margin: 2% 0;
+  font-size: 4em;
+  font-weight: 900;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFE48F;
+  line-height: 1;
+
+  @media (max-width: 767.98px) { 
+    font-size: 3em;
+   }
+`;
+
+const MyPosition = styled.h2`
+  display: grid;
+  align-items: start;
+
+  font-size: 1.3em;
+  font-weight: 100;
+  letter-spacing: 5px;
+
+  @media (max-width: 767.98px) { 
+    font-size: 1em;
+    letter-spacing: 1px;
+   }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  margin: 10% 11% 0;
+
+  > button:first-child {
+    margin-right: 5%;
   }
 
   span {
@@ -121,38 +136,42 @@ const HomeViewContent = styled.div`
     opacity: .0;
     }
   }
+
+  @media (max-width: 767.98px) { 
+    justify-content: center;
+    margin: 0;
+   }
 `;
 
 function HomeView() {
   return (
     <HomeViewWrapper>
-      <HomeViewLeft>
-        <img
+      <MikolajPhoto>
+        <MikolajPhotoImg
           src={mikolajPhoto}
           alt="Mikolaj"
-          style={{
-            width: '100%'
-          }}
         />
-      </HomeViewLeft>
-      <HomeViewRight>
-        <HomeViewWelcome>
+      </MikolajPhoto>
+      <WelcomeContent>
+        <MyNameIs>
           <p>
-            Cześć, nazywam się
+            <span>Cześć,</span> nazywam się <span>_</span>
           </p>
-        </HomeViewWelcome>
-        <HomeViewName>MIKOŁAJ</HomeViewName>
-        <HomeViewName>CIĘSZCZYK</HomeViewName>
-        <HomeViewPosition>JUNIOR FRONT-END DEVELOPER</HomeViewPosition>
-        <HomeViewContent>
-          <p>
-            a to moje portfolio ;-)
-            <span>|</span>
-          </p>
-        </HomeViewContent>
-      </HomeViewRight>
+        </MyNameIs>
+        <NameSurname>
+          Mikołaj
+          Cięszczyk
+        </NameSurname>
+        <MyPosition>
+          JUNIOR FRONT-END DEVELOPER
+        </MyPosition>
+        <ButtonsContainer>
+          <Button secondary>PORTFOLIO</Button>
+          <Button>KONTAKT</Button>
+        </ButtonsContainer>
+      </WelcomeContent>
     </HomeViewWrapper>
-  );
-};
+  )
+}
 
 export default HomeView;

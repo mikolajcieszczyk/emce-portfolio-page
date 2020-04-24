@@ -11,74 +11,90 @@ import expressIcon from 'assets/images/expressJsIcon.png';
 import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
+const ProjectWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
+
+  height: 40vh;
+  margin: 3% 0 15%;
+
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+  @keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+`;
+
 const ProjectTitle = styled.h2`
+  display: grid;
+  align-items: center;
   color: #FFE48F;
-  margin: 2% 0 1%;
 
   text-transform: capitalize;
 `;
 
-const ProjectWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-gap: 1rem;
-
-  height: 250px;
-
-  @media (max-width: 991.98px) { 
-    grid-template-columns: 1fr;
-   }
-`;
-
-const ProjectStack = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-
-  font-weight: 700;
-
-  @media (max-width: 991.98px) { 
-    grid-template-columns: repeat(3, 1fr);
-
-    figcaption {
-    margin-bottom: 2%;
-
-    }
-   }
-`;
-
 const ProjectImage = styled.div`
   background-image: url(${WorkRecordBg});
-  background-color: #5A0A4F;
+  background-size: cover;
   background-position: center;
-  background-size: contain;
   background-repeat: no-repeat;
 
-  @media (max-width: 991.98px) { 
-    display: none;
-   }
+  height: 400px;
+
+  border: 2px solid #FFE48F;
+  border-radius: 20px;
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: stretch;
 
-  p {
-    font-size: 14px;
-    text-align: justify;
-    margin-bottom: 5%;
+  height: 400px;
+`;
 
-    span {
-      color: #FFE48F; 
-    }
+const ProjectText = styled.p`
+  margin-bottom: 2%;
+  font-size: 14px;
+  text-align: justify;
+
+  span { 
+    color: #FFE48F;
+  }
+`;
+
+const ProjectTech = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  margin-bottom: 5%;
+
+  figure {
+    text-align: center;
+  }
+
+  figcaption {
+    font-size: 12px;
+    font-weight: 400;
   }
 `;
 
 const ProjectLinks = styled.div`
   display: grid;
-
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 
-  align-items: end;
 
   a {
     color: white;
@@ -87,28 +103,39 @@ const ProjectLinks = styled.div`
 
   figcaption {
     color: #FFE48F;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
   }
-
-  @media (max-width: 991.98px) { 
-    margin-bottom: 5%;
-   }
 `;
 
 function WorkRecordApp() {
   return (
-    <>
-      <ProjectTitle>
-        Work Record App
-      </ProjectTitle>
-      <ProjectWrapper>
-        <ProjectStack>
-
+    <ProjectWrapper>
+      <ProjectImage />
+      <ProjectDesc>
+        <ProjectTitle>
+          Work Record App
+        </ProjectTitle>
+        <ProjectText>
+          <span>Autorska aplikacja</span>
+          {' '}
+          przeznaczona do użytku dla wszelkiej maści freelancerów, korepetytorów lub... trenerów tenisa (moja motywacja!) ;-)
+          {' '}
+          <span>Umożliwia dodawanie/edycję/usuwanie klientów,</span>
+          {' '}
+          wraz z ich predefiniowanymi stawkami i notatkami, dodawanie przepracowanych godzin, które są grupowane w okresy miesięczne.
+          {' '}
+          <span>Głównym pożytkiem</span>
+          {' '}
+          płynącym z aplikacji jest możliwość generowania raportów miesięcznych, które można wyeksportować do PDF i przedstawić pracodawcy lub schować do segregatora.
+        </ProjectText>
+        <ProjectTech>
           <figure>
             <img
               src={htmlIcon}
               alt="HTML"
-              style={{ width: "50px", height: "50px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>HTML5</figcaption>
           </figure>
@@ -118,7 +145,7 @@ function WorkRecordApp() {
             <img
               src={sassIcon}
               alt="SASS"
-              style={{ width: "50px", height: "50px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>Sass</figcaption>
           </figure>
@@ -127,7 +154,7 @@ function WorkRecordApp() {
             <img
               src={jsIcon}
               alt="JavaScript"
-              style={{ width: "50px", height: "50px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>JavaScript</figcaption>
           </figure>
@@ -136,7 +163,7 @@ function WorkRecordApp() {
             <img
               src={jqueryIcon}
               alt="jQuery"
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>jQuery</figcaption>
           </figure>
@@ -145,7 +172,7 @@ function WorkRecordApp() {
             <img
               src={mongoIcon}
               alt="MongoDB"
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>MongoDB</figcaption>
           </figure>
@@ -154,51 +181,32 @@ function WorkRecordApp() {
             <img
               src={expressIcon}
               alt="ExpressJS"
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>ExpressJS</figcaption>
           </figure>
-
-        </ProjectStack>
-        <ProjectImage />
-        <ProjectDesc>
-          <p>
-            <span>Autorska aplikacja</span>
-            {' '}
-            przeznaczona do użytku dla wszelkiej maści freelancerów, korepetytorów lub... trenerów tenisa (moja motywacja!) ;-) 
-            {' '}
-            <span>Umożliwia dodawanie/edycję/usuwanie klientów,</span>
-            {' '}
-            wraz z ich predefiniowanymi stawkami i notatkami, dodawanie przepracowanych godzin, które są grupowane w okresy miesięczne. 
-            {' '}
-            <span>Głównym pożytkiem</span>
-            {' '}
-            płynącym z aplikacji jest możliwość generowania raportów miesięcznych, które można wyeksportować do PDF i przedstawić pracodawcy lub schować do segregatora.
-          </p>
-
-          <ProjectLinks>
-            <figure>
-              <a href="https://github.com/mikolajcieszczyk/work-record-app" target="_blank">
-                <img
-                  src={githubIcon}
-                  alt="GitHub"
-                  style={{ width: "50px", height: "50px" }}
-                />
-                <figcaption>Kod</figcaption>
-              </a>
-            </figure>
-            <figure>
-              <a href="#" target="_blank">
-                <Web size="56px" />
-                <figcaption>Zobacz</figcaption>
-              </a>
-            </figure>
-          </ProjectLinks>
-
-        </ProjectDesc>
-      </ProjectWrapper>
-    </>
-  );
-};
+        </ProjectTech>
+        <ProjectLinks>
+          <figure>
+            <a href="https://github.com/mikolajcieszczyk/work-record-app" target="_blank">
+              <img
+                src={githubIcon}
+                alt="GitHub"
+                style={{ width: "50px", height: "50px" }}
+              />
+              <figcaption>Kod</figcaption>
+            </a>
+          </figure>
+          <figure>
+            <a href="#" target="_blank">
+              <Web size="56px" />
+              <figcaption>Zobacz</figcaption>
+            </a>
+          </figure>
+        </ProjectLinks>
+      </ProjectDesc>
+    </ProjectWrapper>
+  )
+}
 
 export default WorkRecordApp;

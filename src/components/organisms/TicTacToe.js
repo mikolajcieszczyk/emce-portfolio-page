@@ -10,75 +10,89 @@ import jsIcon from 'assets/images/jsIcon.png';
 import githubIcon from 'assets/images/githubIcon.png';
 import { Web } from '@styled-icons/foundation';
 
+const ProjectWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
+
+  height: 40vh;
+  margin: 3% 0 15%;
+
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+  @keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+`;
+
 const ProjectTitle = styled.h2`
+  display: grid;
+  align-items: center;
   color: #FFE48F;
-  margin: 2% 0 1%;
 
   text-transform: capitalize;
 `;
 
-const ProjectWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-gap: 1rem;
-
-  height: 250px;
-
-  @media (max-width: 991.98px) { 
-    grid-template-columns: 1fr;
-   }
-`;
-
-const ProjectStack = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-
-  font-weight: 700;
-
-  @media (max-width: 575.98px) { 
-    grid-template-columns: repeat(3, 1fr);
-   }
-
-   @media (min-width: 767.98px) { 
-    grid-template-columns: repeat(5, 1fr);
-   }
-   
-   @media (min-width: 992px) { 
-     grid-template-columns: repeat(2, 1fr);
-   }
-   
-`;
-
 const ProjectImage = styled.div`
   background-image: url(${TictactoeBg});
-  background-size: cover;
+  background-size: 100%;
+  background-position: center;
   background-repeat: no-repeat;
 
-  @media (max-width: 991.98px) { 
-    display: none;
-   }
+  height: 400px;
+
+  border: 2px solid #FFE48F;
+  border-radius: 20px;
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
-  
-  p {
-    text-align: justify;
-    margin-bottom: 5%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: stretch;
 
-    span {
-      color: #FFE48F; 
-    }
+  height: 400px;
+`;
+
+const ProjectText = styled.p`
+  margin-bottom: 2%;
+  text-align: justify;
+
+  span { 
+    color: #FFE48F;
+  }
+`;
+
+const ProjectTech = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  margin-bottom: 5%;
+
+  figure {
+    text-align: center;
+  }
+
+  figcaption {
+    font-size: 12px;
+    font-weight: 400;
   }
 `;
 
 const ProjectLinks = styled.div`
   display: grid;
-
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 
-  align-items: end;
 
   a {
     color: white;
@@ -87,28 +101,36 @@ const ProjectLinks = styled.div`
 
   figcaption {
     color: #FFE48F;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
   }
-
-  @media (max-width: 991.98px) { 
-    margin-bottom: 5%;
-   }
 `;
 
 function TicTacToe() {
   return (
-    <>
-      <ProjectTitle>
-        Tic-Tac-Toe Game
-      </ProjectTitle>
-      <ProjectWrapper>
-        <ProjectStack>
-
+    <ProjectWrapper>
+      <ProjectImage />
+      <ProjectDesc>
+        <ProjectTitle>
+          Tic-Tac-Toe
+        </ProjectTitle>
+        <ProjectText>
+          <span>Kółko i krzyżyk...</span>
+          {' '}
+          któż z nas nie grał w czasie lekcji z kolegą z ławki ;-) Aplikacja zaprogramowana
+          {' '}
+          <span>do gry w dwie osoby</span>
+          , daje możliwość (gwoli ścisłości to wymusza ;) zdefiniowania imion graczy. Po skończonej rundzie wyświetla komunikat o zwycięzcy, a następnie losuje osobę, która rozpocznie kolejną rundę. 
+          {' '}
+          <span>Doskonały zabijacz czasu!</span>
+        </ProjectText>
+        <ProjectTech>
           <figure>
             <img
               src={htmlIcon}
               alt="HTML"
-              style={{ width: "50px", height: "50px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>HTML5</figcaption>
           </figure>
@@ -118,7 +140,7 @@ function TicTacToe() {
             <img
               src={cssIcon}
               alt="CSS"
-              style={{ width: "50px", height: "50px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>CSS3</figcaption>
           </figure>
@@ -127,7 +149,7 @@ function TicTacToe() {
             <img
               src={bootstrapIcon}
               alt="Bootstrap"
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>Bootstrap</figcaption>
           </figure>
@@ -136,7 +158,7 @@ function TicTacToe() {
             <img
               src={jsIcon}
               alt="JavaScript"
-              style={{ width: "50px", height: "50px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>JavaScript</figcaption>
           </figure>
@@ -145,47 +167,32 @@ function TicTacToe() {
             <img
               src={jqueryIcon}
               alt="jQuery"
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "30px", height: "30px" }}
             />
             <figcaption>jQuery</figcaption>
           </figure>
-
-        </ProjectStack>
-        <ProjectImage />
-        <ProjectDesc>
-
-          <p>
-            <span>Kółko i krzyżyk...</span>
-            {' '}
-            któż z nas nie grał w czasie lekcji z kolegą z ławki ;-) Aplikacja zaprogramowana 
-            {' '}
-            <span>do gry w dwie osoby</span>
-            , daje możliwość (gwoli ścisłości to wymusza ;) zdefiniowania imion graczy. Po skończonej rundzie wyświetla komunikat o zwycięzcy, a następnie losuje osobę, która rozpocznie kolejną rundę. <span>Doskonały zabijacz czasu!</span>
-          </p>
-
-          <ProjectLinks>
-            <figure>
-              <a href="https://github.com/mikolajcieszczyk/tic-tac-toe" target="_blank">
-                <img
-                  src={githubIcon}
-                  alt="GitHub"
-                  style={{ width: "50px", height: "50px" }}
-                />
-                <figcaption>Kod</figcaption>
-              </a>
-            </figure>
-            <figure>
-              <a href="#" target="_blank">
-                <Web size="56px" />
-                <figcaption>Zobacz</figcaption>
-              </a>
-            </figure>
-          </ProjectLinks>
-
-        </ProjectDesc>
-      </ProjectWrapper>
-    </>
-  );
-};
+        </ProjectTech>
+        <ProjectLinks>
+          <figure>
+            <a href="https://github.com/mikolajcieszczyk/tic-tac-toe" target="_blank">
+              <img
+                src={githubIcon}
+                alt="GitHub"
+                style={{ width: "50px", height: "50px" }}
+              />
+              <figcaption>Kod</figcaption>
+            </a>
+          </figure>
+          <figure>
+            <a href="#" target="_blank">
+              <Web size="56px" />
+              <figcaption>Zobacz</figcaption>
+            </a>
+          </figure>
+        </ProjectLinks>
+      </ProjectDesc>
+    </ProjectWrapper>
+  )
+}
 
 export default TicTacToe;
