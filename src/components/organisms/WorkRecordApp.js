@@ -9,17 +9,21 @@ import jsIcon from 'assets/images/jsIcon.png';
 import mongoIcon from 'assets/images/mongoIcon.png';
 import expressIcon from 'assets/images/expressJsIcon.png';
 import githubIcon from 'assets/images/githubIcon.png';
-import { Web } from '@styled-icons/foundation';
+import { Code } from '@styled-icons/entypo';
+
 
 const ProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 5%;
 
-  height: 40vh;
-  margin: 3% 0 15%;
+  margin: 3% 0 3%;
 
   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr;
+   }
 
   @keyframes text-focus-in {
   0% {
@@ -34,179 +38,315 @@ const ProjectWrapper = styled.div`
   }
 `;
 
-const ProjectTitle = styled.h2`
-  display: grid;
-  align-items: center;
-  color: #FFE48F;
-
-  text-transform: capitalize;
+const ProjectDemoLink = styled.a`
+  text-decoration: none;
+  color: #000;
+  font-size: 2em;
+  font-weight: 700;
 `;
 
 const ProjectImage = styled.div`
+  display: grid;
+  align-items: center;
+
+  height: 400px;
+
   background-image: url(${WorkRecordBg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  height: 400px;
-
   border: 2px solid #FFE48F;
   border-radius: 20px;
+
+    @media (max-width: 767.98px) { 
+      display: none;
+    }
+
+    @media (max-width: 991.98px) { 
+      height: 600px;
+    }
+
+   div {
+    display: grid;
+    align-items: center;
+
+    height: 100px;
+
+    background-color: ${ (props) => props.caption ? "rgba(255, 229, 143, 0.68)" : "inherit"};
+
+    text-align: center;
+   }
+`;
+
+const ProjectTitle = styled.h2`
+  display: grid;
+  align-items: center;
+  
+   a {
+     color: #FFE48F;
+     text-decoration: none;
+     text-transform: capitalize;
+
+     &:hover {
+       text-decoration: underline;
+       text-decoration-color: #fff;
+     }
+   }
+
+   @media (max-width: 767.98px) { 
+      margin: 5% 0;
+
+        a {
+            text-decoration: underline;
+            text-decoration-color: #fff;
+        }
+    }
+
+    @media (max-width: 991.98px) { 
+      a {
+            text-decoration: underline;
+            text-decoration-color: #fff;
+        }
+    }
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-items: stretch;
 
   height: 400px;
+
+  @media (max-width: 767.98px) { 
+      grid-template-rows: 1fr;
+    }
+
+  @media (max-width: 991.98px) { 
+      height: 500px;
+    }
 `;
 
 const ProjectText = styled.p`
-  margin-bottom: 2%;
-  font-size: 14px;
   text-align: justify;
 
-  span { 
-    color: #FFE48F;
+    span { 
+      color: #FFE48F;
+    }
+
+    @media (max-width: 767.98px) { 
+      margin-bottom: 5%;
+    }
+`;
+
+const ProjectInWhat = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: 1fr;
+    margin-top: 5%;
   }
 `;
 
 const ProjectTech = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
 
-  margin-bottom: 5%;
+    figure {
+      text-align: center;
+      margin: 5%;
 
-  figure {
-    text-align: center;
-  }
+      &:hover {
+      img {
+        opacity: 0.8;
+      }
+      }
+    }
 
-  figcaption {
-    font-size: 12px;
-    font-weight: 400;
-  }
+    figcaption {
+      font-size: 12px;
+      font-weight: 400;
+    }
 `;
 
 const ProjectLinks = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   justify-items: center;
+  align-items: start;
 
+    a {
+      color: white;
+      text-decoration: none;
+    }
 
-  a {
-    color: white;
-    text-decoration: none;
-  }
+    figure {
+      padding: 5%;
 
-  figcaption {
-    color: #FFE48F;
-    font-size: 12px;
-    font-weight: 400;
-    text-align: center;
-  }
+        &:hover {
+        border: 2px solid #FFE48F;
+        border-radius: 20px;
+        }
+    }
+
+    figcaption {
+      color: #FFE48F;
+      font-weight: 400;
+      text-align: center;
+    }
 `;
 
-function WorkRecordApp() {
-  return (
-    <ProjectWrapper>
-      <ProjectImage />
-      <ProjectDesc>
-        <ProjectTitle>
-          Work Record App
-        </ProjectTitle>
-        <ProjectText>
-          <span>Autorska aplikacja</span>
-          {' '}
-          przeznaczona do użytku dla wszelkiej maści freelancerów, korepetytorów lub... trenerów tenisa (moja motywacja!) ;-)
-          {' '}
-          <span>Umożliwia dodawanie/edycję/usuwanie klientów,</span>
-          {' '}
-          wraz z ich predefiniowanymi stawkami i notatkami, dodawanie przepracowanych godzin, które są grupowane w okresy miesięczne.
-          {' '}
-          <span>Głównym pożytkiem</span>
-          {' '}
-          płynącym z aplikacji jest możliwość generowania raportów miesięcznych, które można wyeksportować do PDF i przedstawić pracodawcy lub schować do segregatora.
-        </ProjectText>
-        <ProjectTech>
-          <figure>
-            <img
-              src={htmlIcon}
-              alt="HTML"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>HTML5</figcaption>
-          </figure>
+class WorkRecordApp extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.showCaption = this.showCaption.bind(this);
+    this.hideCaption = this.hideCaption.bind(this);
 
-          <figure>
-            <img
-              src={sassIcon}
-              alt="SASS"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>Sass</figcaption>
-          </figure>
+    this.state = {
+      caption: false,
+      text: ""
+    };
+  }
 
-          <figure>
-            <img
-              src={jsIcon}
-              alt="JavaScript"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>JavaScript</figcaption>
-          </figure>
+  showCaption() {
+    this.setState({
+      caption: true,
+      text: "ZOBACZ DEMO"
+    });
+  }
 
-          <figure>
-            <img
-              src={jqueryIcon}
-              alt="jQuery"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>jQuery</figcaption>
-          </figure>
+  hideCaption() {
+    this.setState({
+      caption: false,
+      text: ""
+    });
+  }
 
-          <figure>
-            <img
-              src={mongoIcon}
-              alt="MongoDB"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>MongoDB</figcaption>
-          </figure>
+  render() {
+    const { text } = this.state;
 
-          <figure>
-            <img
-              src={expressIcon}
-              alt="ExpressJS"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>ExpressJS</figcaption>
-          </figure>
-        </ProjectTech>
-        <ProjectLinks>
-          <figure>
-            <a href="https://github.com/mikolajcieszczyk/work-record-app" target="_blank">
-              <img
-                src={githubIcon}
-                alt="GitHub"
-                style={{ width: "50px", height: "50px" }}
-              />
-              <figcaption>Kod</figcaption>
+    return (
+      <ProjectWrapper>
+        <ProjectDemoLink
+          href="https://github.com/mikolajcieszczyk/work-record-app"
+          target="_blank"
+          title="DEMO"
+        >
+          <ProjectImage
+            onMouseEnter={this.showCaption}
+            onMouseLeave={this.hideCaption}
+            caption={this.state.caption}
+          >
+            <div>
+              {text}
+            </div>
+          </ProjectImage>
+        </ProjectDemoLink>
+        <ProjectDesc>
+          <ProjectTitle>
+            <a
+              href="https://github.com/mikolajcieszczyk/work-record-app"
+              target="_blank"
+              title="DEMO"
+            >
+              Work Record App
             </a>
-          </figure>
-          <figure>
-            <a href="#" target="_blank">
-              <Web size="56px" />
-              <figcaption>Zobacz</figcaption>
-            </a>
-          </figure>
-        </ProjectLinks>
-      </ProjectDesc>
-    </ProjectWrapper>
-  )
+          </ProjectTitle>
+          <ProjectText>
+            <span>Autorska aplikacja</span>
+            {' '}
+            przeznaczona do użytku dla wszelkiej maści freelancerów, korepetytorów lub... trenerów tenisa (moja motywacja!) ;-)
+            {' '}
+            <span>Umożliwia dodawanie/edycję/usuwanie klientów,</span>
+            {' '}
+            wraz z ich predefiniowanymi stawkami i notatkami, dodawanie przepracowanych godzin, które są grupowane w okresy miesięczne.
+            {' '}
+            <span>Głównym pożytkiem</span>
+            {' '}
+            płynącym z aplikacji jest możliwość generowania raportów miesięcznych, które można wyeksportować do PDF i przedstawić pracodawcy lub schować do segregatora.
+          </ProjectText>
+          <ProjectInWhat>
+            <ProjectTech>
+              <figure>
+                <img
+                  src={htmlIcon}
+                  alt="HTML"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>HTML5</figcaption>
+              </figure>
+
+
+              <figure>
+                <img
+                  src={sassIcon}
+                  alt="SASS"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>Sass</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src={jsIcon}
+                  alt="JavaScript"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>JavaScript</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src={jqueryIcon}
+                  alt="jQuery"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>jQuery</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src={mongoIcon}
+                  alt="MongoDB"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>MongoDB</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src={expressIcon}
+                  alt="ExpressJS"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>ExpressJS</figcaption>
+              </figure>
+            </ProjectTech>
+            <ProjectLinks>
+              <figure>
+                <a
+                  href="https://github.com/mikolajcieszczyk/work-record-app"
+                  target="_blank"
+                  title="KOD"
+                >
+                  <Code size="60px" />
+                  <figcaption>KOD</figcaption>
+                </a>
+              </figure>
+            </ProjectLinks>
+          </ProjectInWhat>
+        </ProjectDesc>
+      </ProjectWrapper>
+    )
+  }
 }
 
 export default WorkRecordApp;

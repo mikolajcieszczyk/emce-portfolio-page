@@ -44,9 +44,9 @@ const PortfolioViewGrid = styled.div`
 
   width: 100%;
 
-  @media (max-width: 575.98px) { 
-    grid-template-columns: repeat(3, 1fr);
-   }
+  @media (max-width: 767.98px) { 
+      grid-template-columns: repeat(3, 1fr);
+    }
 `;
 
 function PortfolioView() {

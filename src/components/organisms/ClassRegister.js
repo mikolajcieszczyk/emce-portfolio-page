@@ -6,18 +6,21 @@ import reactIcon from 'assets/images/reactIcon.png';
 import scIcon from 'assets/images/scIcon.png';
 import sbIcon from 'assets/images/storybookIcon.png';
 import adIcon from 'assets/images/atomicDesignIcon.png';
-import githubIcon from 'assets/images/githubIcon.png';
-import { Web } from '@styled-icons/foundation';
+import { Code } from '@styled-icons/entypo';
+
 
 const ProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 5%;
 
-  height: 40vh;
-  margin: 3% 0 15%;
+  margin: 3% 0 3%;
 
   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr;
+   }
 
   @keyframes text-focus-in {
   0% {
@@ -32,181 +35,284 @@ const ProjectWrapper = styled.div`
   }
 `;
 
-const ProjectTitle = styled.h2`
-  display: grid;
-  align-items: center;
-  color: #FFE48F;
-
-  text-transform: capitalize;
+const ProjectDemoLink = styled.a`
+  text-decoration: none;
+  color: #000;
+  font-size: 2em;
+  font-weight: 700;
 `;
 
 const ProjectImage = styled.div`
   display: grid;
   align-items: center;
 
+  height: 400px;
+
   background-image: url(${NjscrBg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  height: 400px;
-
   border: 2px solid #FFE48F;
   border-radius: 20px;
 
-  &:hover {
-     opacity: 0.4;
+    @media (max-width: 767.98px) { 
+      display: none;
+    }
+
+    @media (max-width: 991.98px) { 
+      height: 500px;
+    }
+
+   div {
+    display: grid;
+    align-items: center;
+
+    height: 100px;
+
+    background-color: ${ (props) => props.caption ? "rgba(255, 229, 143, 0.68)" : "inherit"};
+
+    text-align: center;
    }
+`;
+
+const ProjectTitle = styled.h2`
+  display: grid;
+  align-items: center;
+  
+   a {
+     color: #FFE48F;
+     text-decoration: none;
+     text-transform: capitalize;
+
+     &:hover {
+       text-decoration: underline;
+       text-decoration-color: #fff;
+     }
+   }
+
+   @media (max-width: 767.98px) { 
+      margin: 5% 0;
+
+        a {
+            text-decoration: underline;
+            text-decoration-color: #fff;
+        }
+    }
+
+    @media (max-width: 991.98px) { 
+      a {
+            text-decoration: underline;
+            text-decoration-color: #fff;
+        }
+    }
 `;
 
 const ProjectDesc = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-items: stretch;
 
   height: 400px;
+
+  @media (max-width: 767.98px) { 
+      grid-template-rows: 1fr;
+    }
+
+  @media (max-width: 991.98px) { 
+      height: 500px;
+    }
 `;
 
 const ProjectText = styled.p`
   text-align: justify;
-  margin-bottom: 2%;
 
-  span { 
-    color: #FFE48F;
+    span { 
+      color: #FFE48F;
+    }
+
+    @media (max-width: 767.98px) { 
+      margin-bottom: 5%;
+    }
+`;
+
+const ProjectInWhat = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 991.98px) { 
+    grid-template-columns: 1fr;
+    margin-top: 5%;
   }
 `;
 
 const ProjectTech = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  align-items: center;
 
-  margin-bottom: 5%;
+    figure {
+      text-align: center;
 
-  figure {
-    text-align: center;
-  }
+      &:hover {
+      img {
+        opacity: 0.8;
+      }
+      }
+    }
 
-  figcaption {
-    font-size: 12px;
-    font-weight: 400;
-  }
+    figcaption {
+      font-size: 12px;
+      font-weight: 400;
+    }
 `;
 
 const ProjectLinks = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   justify-items: center;
+  align-items: start;
 
+    a {
+      color: white;
+      text-decoration: none;
+    }
 
-  a {
-    color: white;
-    text-decoration: none;
-  }
+    figure {
+      padding: 5%;
 
-  figcaption {
-    color: #FFE48F;
-    font-size: 12px;
-    font-weight: 400;
-    text-align: center;
-  }
+        &:hover {
+        border: 2px solid #FFE48F;
+        border-radius: 20px;
+        }
+    }
+
+    figcaption {
+      color: #FFE48F;
+      font-weight: 400;
+      text-align: center;
+    }
 `;
-
-const ProjectImageCaption = styled.div`
-
-  width: 100%;
-  height: 100px;
-
-  background-color: ${ (props) => props.caption ? "#000" : "inherit" };
-`;
-
 
 class ClassRegister extends React.Component {
   constructor(props){
     super(props);
 
-    this.changeCaption = this.changeCaption.bind(this);
+    this.showCaption = this.showCaption.bind(this);
+    this.hideCaption = this.hideCaption.bind(this);
 
     this.state = {
-      caption: false
+      caption: false,
+      text: ""
     };
   }
 
-  changeCaption() {
-    let newCaptionStatus = !this.state.caption;
-    this.setState({ caption: newCaptionStatus});
+  showCaption() {
+    this.setState({ 
+      caption: true, 
+      text: "ZOBACZ DEMO" 
+      });
+  }
+
+  hideCaption() {
+    this.setState({ 
+      caption: false, 
+      text: "" 
+      });
   }
 
   render() {
+    const {text} = this.state;
+
     return (
       <ProjectWrapper>
-        <a href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" target="_blank">
-          <ProjectImage>
-            <ProjectImageCaption
-              onMouseEnter={this.changeCaption}
-              onMouseLeave={this.changeCaption}
-              caption={this.state.caption}
-            >
-              lala
-            </ProjectImageCaption>
+        <ProjectDemoLink 
+          href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" 
+          target="_blank"
+          title="DEMO"
+        >
+          <ProjectImage
+            onMouseEnter={this.showCaption}
+            onMouseLeave={this.hideCaption}
+            caption={this.state.caption}
+          >
+            <div>
+              {text}
+            </div>
           </ProjectImage>
-        </a>
+        </ProjectDemoLink>
         <ProjectDesc>
           <ProjectTitle>
-            NodeJS Class Register
+            <a
+              href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2"
+              target="_blank"
+              title="DEMO"
+            >
+              NodeJS Class Register
+            </a>
           </ProjectTitle>
           <ProjectText>
             <span>Projekt dziennika elektronicznego</span>
             {' '}
             we wczesnej fazie produkcyjnej. Odpowiadam w nim za front-end. Jest już cała struktura folderów i komponentów zaprojektowana zgodnie z Atomic Design, zrobiony podgląd komponentów w StoryBook oraz zakodowane przekazywanie propsów w nawigacji do widoku Admina, Ucznia oraz Nauczyciela. Prace w toku.
           </ProjectText>
-          <ProjectTech>
-            <figure>
-              <img
-                src={reactIcon}
-                alt="React"
-                style={{ width: "30px", height: "30px" }}
-              />
-              <figcaption>React</figcaption>
-            </figure>
+          <ProjectInWhat>
+            <ProjectTech>
+              <figure>
+                <img
+                  src={reactIcon}
+                  alt="React"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>React</figcaption>
+              </figure>
 
 
-            <figure>
-              <img
-                src={scIcon}
-                alt="Styled Components"
-                style={{ width: "30px", height: "30px" }}
-              />
-              <figcaption>Styled Components</figcaption>
-            </figure>
+              <figure>
+                <img
+                  src={scIcon}
+                  alt="Styled Components"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>Styled Components</figcaption>
+              </figure>
 
-            <figure>
-              <img
-                src={sbIcon}
-                alt="StoryBook"
-                style={{ width: "30px", height: "30px" }}
-              />
-              <figcaption>StoryBook</figcaption>
-            </figure>
+              <figure>
+                <img
+                  src={sbIcon}
+                  alt="StoryBook"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>StoryBook</figcaption>
+              </figure>
 
-            <figure>
-              <img
-                src={adIcon}
-                alt="Atomic Design"
-                style={{ width: "30px", height: "30px" }}
-              />
-              <figcaption>Atomic Design</figcaption>
-            </figure>
-          </ProjectTech>
-          <ProjectLinks>
-            <figure>
-              <a href="#" target="_blank">
-                <Web size="56px" />
-                <figcaption>Zobacz</figcaption>
-              </a>
-            </figure>
-          </ProjectLinks>
+              <figure>
+                <img
+                  src={adIcon}
+                  alt="Atomic Design"
+                  style={{ width: "30px", height: "30px" }}
+                />
+                <figcaption>Atomic Design</figcaption>
+              </figure>
+            </ProjectTech>
+            <ProjectLinks>
+              <figure>
+                <a 
+                href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" 
+                target="_blank"
+                title="KOD"
+                >
+                  <Code size="60px" />
+                  <figcaption>KOD</figcaption>
+                </a>
+              </figure>
+            </ProjectLinks>
+          </ProjectInWhat>
         </ProjectDesc>
       </ProjectWrapper>
     )

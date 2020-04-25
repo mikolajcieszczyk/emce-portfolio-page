@@ -11,23 +11,27 @@ const ViewTitleTemplate = styled.h2`
 
    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 
-   @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
+    span {
+        display: block;
+        font-size: 10px;
+        color: #fff;
+      }
 
-span {
-  display: block;
-  font-size: 10px;
-  color: #fff;
+   @media (max-width: 767.98px) { 
+      margin-bottom: 5%;
+    }
+
+   @keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
 }
 `;
 
