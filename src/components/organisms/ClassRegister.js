@@ -41,6 +41,9 @@ const ProjectTitle = styled.h2`
 `;
 
 const ProjectImage = styled.div`
+  display: grid;
+  align-items: center;
+
   background-image: url(${NjscrBg});
   background-size: cover;
   background-position: center;
@@ -50,6 +53,10 @@ const ProjectImage = styled.div`
 
   border: 2px solid #FFE48F;
   border-radius: 20px;
+
+  &:hover {
+     opacity: 0.4;
+   }
 `;
 
 const ProjectDesc = styled.div`
@@ -106,78 +113,104 @@ const ProjectLinks = styled.div`
   }
 `;
 
-function ClassRegister() {
-  return (
-    <ProjectWrapper>
-      <ProjectImage />
-      <ProjectDesc>
-        <ProjectTitle>
-          NodeJS Class Register
-        </ProjectTitle>
-        <ProjectText>
-          <span>Projekt dziennika elektronicznego</span>
-          {' '}
-          we wczesnej fazie produkcyjnej. Odpowiadam w nim za front-end. Jest już cała struktura folderów i komponentów zaprojektowana zgodnie z Atomic Design, zrobiony podgląd komponentów w StoryBook oraz zakodowane przekazywanie propsów w nawigacji do widoku Admina, Ucznia oraz Nauczyciela. Prace w toku.
-        </ProjectText>
-        <ProjectTech>
-          <figure>
-            <img
-              src={reactIcon}
-              alt="React"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>React</figcaption>
-          </figure>
+const ProjectImageCaption = styled.div`
+
+  width: 100%;
+  height: 100px;
+
+  background-color: ${ (props) => props.caption ? "#000" : "inherit" };
+`;
 
 
-          <figure>
-            <img
-              src={scIcon}
-              alt="Styled Components"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>Styled Components</figcaption>
-          </figure>
+class ClassRegister extends React.Component {
+  constructor(props){
+    super(props);
 
-          <figure>
-            <img
-              src={sbIcon}
-              alt="StoryBook"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>StoryBook</figcaption>
-          </figure>
+    this.changeCaption = this.changeCaption.bind(this);
 
-          <figure>
-            <img
-              src={adIcon}
-              alt="Atomic Design"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <figcaption>Atomic Design</figcaption>
-          </figure>
-        </ProjectTech>
-        <ProjectLinks>
-          <figure>
-            <a href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" target="_blank">
+    this.state = {
+      caption: false
+    };
+  }
+
+  changeCaption() {
+    let newCaptionStatus = !this.state.caption;
+    this.setState({ caption: newCaptionStatus});
+  }
+
+  render() {
+    return (
+      <ProjectWrapper>
+        <a href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" target="_blank">
+          <ProjectImage>
+            <ProjectImageCaption
+              onMouseEnter={this.changeCaption}
+              onMouseLeave={this.changeCaption}
+              caption={this.state.caption}
+            >
+              lala
+            </ProjectImageCaption>
+          </ProjectImage>
+        </a>
+        <ProjectDesc>
+          <ProjectTitle>
+            NodeJS Class Register
+          </ProjectTitle>
+          <ProjectText>
+            <span>Projekt dziennika elektronicznego</span>
+            {' '}
+            we wczesnej fazie produkcyjnej. Odpowiadam w nim za front-end. Jest już cała struktura folderów i komponentów zaprojektowana zgodnie z Atomic Design, zrobiony podgląd komponentów w StoryBook oraz zakodowane przekazywanie propsów w nawigacji do widoku Admina, Ucznia oraz Nauczyciela. Prace w toku.
+          </ProjectText>
+          <ProjectTech>
+            <figure>
               <img
-                src={githubIcon}
-                alt="GitHub"
-                style={{ width: "50px", height: "50px" }}
+                src={reactIcon}
+                alt="React"
+                style={{ width: "30px", height: "30px" }}
               />
-              <figcaption>Kod</figcaption>
-            </a>
-          </figure>
-          <figure>
-            <a href="#" target="_blank">
-              <Web size="56px" />
-              <figcaption>Zobacz</figcaption>
-            </a>
-          </figure>
-        </ProjectLinks>
-      </ProjectDesc>
-    </ProjectWrapper>
-  )
+              <figcaption>React</figcaption>
+            </figure>
+
+
+            <figure>
+              <img
+                src={scIcon}
+                alt="Styled Components"
+                style={{ width: "30px", height: "30px" }}
+              />
+              <figcaption>Styled Components</figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src={sbIcon}
+                alt="StoryBook"
+                style={{ width: "30px", height: "30px" }}
+              />
+              <figcaption>StoryBook</figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src={adIcon}
+                alt="Atomic Design"
+                style={{ width: "30px", height: "30px" }}
+              />
+              <figcaption>Atomic Design</figcaption>
+            </figure>
+          </ProjectTech>
+          <ProjectLinks>
+            <figure>
+              <a href="#" target="_blank">
+                <Web size="56px" />
+                <figcaption>Zobacz</figcaption>
+              </a>
+            </figure>
+          </ProjectLinks>
+        </ProjectDesc>
+      </ProjectWrapper>
+    )
+  }
 }
 
 export default ClassRegister;

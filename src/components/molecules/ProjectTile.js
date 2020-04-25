@@ -64,7 +64,7 @@ class ProjectTile extends React.Component {
         this.setState({ text: this.props.text })
     }
 
-    render(props) {
+    render() {
         const { text } = this.state;
 
         return(
