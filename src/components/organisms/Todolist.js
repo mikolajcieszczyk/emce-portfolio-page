@@ -234,7 +234,7 @@ class ToDoList extends React.Component {
     return (
       <ProjectWrapper>
         <ProjectDemoLink
-          href="https://github.com/mikolajcieszczyk/todo-list"
+          href="https://angry-clarke-b0c89a.netlify.app/"
           rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
@@ -252,7 +252,7 @@ class ToDoList extends React.Component {
         <ProjectDesc>
           <ProjectTitle>
             <a
-              href="https://github.com/mikolajcieszczyk/todo-list"
+              href="https://angry-clarke-b0c89a.netlify.app/"
               rel="noopener noreferrer"
               target="_blank"
               title="DEMO"

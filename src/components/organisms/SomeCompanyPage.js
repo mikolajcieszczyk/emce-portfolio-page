@@ -235,7 +235,7 @@ class SomeCompanyPage extends React.Component {
     return (
       <ProjectWrapper>
         <ProjectDemoLink
-          href="https://github.com/mikolajcieszczyk/some-company-page"
+          href="https://infallible-borg-600713.netlify.app/"
           rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
@@ -253,7 +253,7 @@ class SomeCompanyPage extends React.Component {
         <ProjectDesc>
           <ProjectTitle>
             <a
-              href="https://github.com/mikolajcieszczyk/some-company-page"
+              href="https://infallible-borg-600713.netlify.app/"
               rel="noopener noreferrer"
               target="_blank"
               title="DEMO"

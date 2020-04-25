@@ -234,7 +234,7 @@ class TicTacToe extends React.Component {
     return (
       <ProjectWrapper>
         <ProjectDemoLink
-          href="https://github.com/mikolajcieszczyk/tic-tac-toe"
+          href="https://brave-mayer-dd91e5.netlify.app"
           rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
@@ -252,7 +252,7 @@ class TicTacToe extends React.Component {
         <ProjectDesc>
           <ProjectTitle>
             <a
-              href="https://github.com/mikolajcieszczyk/tic-tac-toe"
+              href="https://brave-mayer-dd91e5.netlify.app"
               rel="noopener noreferrer"
               target="_blank"
               title="DEMO"

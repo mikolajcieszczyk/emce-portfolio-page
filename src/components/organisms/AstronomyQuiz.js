@@ -235,7 +235,7 @@ class AstronomyQuiz extends React.Component {
     return (
       <ProjectWrapper>
         <ProjectDemoLink
-          href="https://github.com/mikolajcieszczyk/astronomy-quiz"
+          href="https://epic-meitner-d84ad6.netlify.app/"
           rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
@@ -253,7 +253,7 @@ class AstronomyQuiz extends React.Component {
         <ProjectDesc>
           <ProjectTitle>
             <a
-              href="https://github.com/mikolajcieszczyk/astronomy-quiz"
+              href="https://epic-meitner-d84ad6.netlify.app/"
               rel="noopener noreferrer"
               target="_blank"
               title="DEMO"
