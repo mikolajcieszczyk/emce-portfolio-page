@@ -12,6 +12,7 @@ const ProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 5%;
+  align-items: center;
 
   margin: 3% 0 3%;
 
@@ -111,7 +112,7 @@ const ProjectTitle = styled.h2`
 const ProjectDesc = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  justify-items: stretch;
+  justify-content: stretch;
 
   height: 400px;
 
@@ -127,6 +128,7 @@ const ProjectDesc = styled.div`
 
 const ProjectText = styled.p`
   text-align: justify;
+  margin-top: 5%;
 
     span { 
       color: #FFE48F;

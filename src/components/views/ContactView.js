@@ -13,6 +13,12 @@ const ContactViewWrapper = styled.div`
   justify-content: center;
 
   height: 500px;
+
+  @media (max-width: 767.98px) { 
+        grid-template-rows: 50% 10% 10%;
+
+        height: 300px;
+      }
 `;
 
 const ContactViewTitle = styled.h2`
@@ -87,44 +93,76 @@ const ContactViewData = styled.div`
       }
    } 
 }
+`;
 
-  
+const ContactViewAbout = styled.div`
+  width: 100%;
+
+  font-size: 12px;
+  text-align: center;
+
+  a {
+    margin: 0 5px;
+
+    color: #FFE48F;
+  }
 `;
 
 function ContactView() {
     return (
-      <ContactViewWrapper>
-        <ContactViewTitle>
-          kontakt
+      <>
+        <ContactViewWrapper>
+          <ContactViewTitle>
+            kontakt
         </ContactViewTitle>
-        <ContactViewEmail>
-          <a href="mailto:mikolaj.cieszczyk@gmail.com">mikolaj.cieszczyk@gmail.com</a>
-        </ContactViewEmail>
-        <ContactViewData>
-          <a 
-            href="https://www.linkedin.com/in/mikolajcieszczyk/" 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin size="54px" />
-          </a>
-          <a 
-            href="https://www.facebook.com/mikolaj.cieszczyk/" 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookSquare size="54px" />
-          </a>
-          <a 
-            href="https://github.com/mikolajcieszczyk" 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubSquare size="54px" />
-          </a>
-        </ContactViewData>
+          <ContactViewEmail>
+            <a href="mailto:mikolaj.cieszczyk@gmail.com">mikolaj.cieszczyk@gmail.com</a>
+          </ContactViewEmail>
+          <ContactViewData>
+            <a
+              href="https://www.linkedin.com/in/mikolajcieszczyk/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size="54px" />
+            </a>
+            <a
+              href="https://www.facebook.com/mikolaj.cieszczyk/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookSquare size="54px" />
+            </a>
+            <a
+              href="https://github.com/mikolajcieszczyk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubSquare size="54px" />
+            </a>
+          </ContactViewData>
+        </ContactViewWrapper>
 
-      </ContactViewWrapper>
+        <ContactViewAbout>
+          <p>Autor: Mikołaj Cięszczyk, 2020</p> 
+          <span>Ikony w aplikacji dzięki</span> 
+          <a
+            href="https://icons8.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+             icons8
+          </a>
+          oraz
+          <a
+            href="https://styled-icons.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Styled Icons
+          </a>
+      </ContactViewAbout>
+      </>
     );
 };
 

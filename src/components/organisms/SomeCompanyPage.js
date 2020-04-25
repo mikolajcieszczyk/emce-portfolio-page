@@ -128,6 +128,7 @@ const ProjectDesc = styled.div`
 
 const ProjectText = styled.p`
   text-align: justify;
+  margin-top: 5%;
 
     span { 
       color: #FFE48F;
