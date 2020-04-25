@@ -49,6 +49,8 @@ const ContactViewTitle = styled.h2`
 
 const ContactViewEmail = styled.div`
   justify-self: center;
+  margin-top: 1%;
+
 
     a {
       color: #fff;
@@ -66,6 +68,8 @@ const ContactViewEmail = styled.div`
 const ContactViewData = styled.div`
   justify-self: center;
   align-self: start;
+  margin-top: 2%;
+
 
     a {
         color: #fff;
@@ -114,7 +118,7 @@ function ContactView() {
         <ContactViewWrapper>
           <ContactViewTitle>
             kontakt
-        </ContactViewTitle>
+          </ContactViewTitle>
           <ContactViewEmail>
             <a href="mailto:mikolaj.cieszczyk@gmail.com">mikolaj.cieszczyk@gmail.com</a>
           </ContactViewEmail>
@@ -151,7 +155,7 @@ function ContactView() {
             target="_blank"
             rel="noopener noreferrer"
           >
-             icons8
+            icons8
           </a>
           oraz
           <a
@@ -161,7 +165,7 @@ function ContactView() {
           >
             Styled Icons
           </a>
-      </ContactViewAbout>
+        </ContactViewAbout>
       </>
     );
 };

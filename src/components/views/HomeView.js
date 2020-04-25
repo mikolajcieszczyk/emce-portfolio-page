@@ -69,6 +69,7 @@ const MyNameIs = styled.div`
       color: #FFE48F;
       animation: blink 1s infinite;
       }
+      
     @keyframes blink{
       to {
         opacity: .0;
