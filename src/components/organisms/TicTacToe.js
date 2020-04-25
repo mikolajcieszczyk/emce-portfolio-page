@@ -101,6 +101,8 @@ const ProjectTitle = styled.h2`
     }
 
     @media (max-width: 991.98px) { 
+      margin: 5% 0;
+      
       a {
             text-decoration: underline;
             text-decoration-color: #fff;
@@ -110,7 +112,7 @@ const ProjectTitle = styled.h2`
 
 const ProjectDesc = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
   justify-items: stretch;
 
   height: 400px;

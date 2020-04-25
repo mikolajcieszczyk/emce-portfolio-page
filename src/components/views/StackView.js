@@ -10,6 +10,10 @@ const StackViewWrapper = styled.div`
   grid-template-rows: 1fr 2fr 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
   justify-items: stretch;
+
+  @media (max-width: 767.98px) { 
+    grid-template-rows: 2% auto auto auto auto auto;
+   }
 `;
 
 const StackViewTitle = styled.div`
@@ -39,6 +43,10 @@ const MainTechnologies = styled.div`
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-items: start;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr 1fr;
+   }
 `;
 
 const SecondaryTechnologies = styled.div`
@@ -46,6 +54,10 @@ const SecondaryTechnologies = styled.div`
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
   align-items: center;
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr 1fr;
+   }
 `;
 
 const AdditionalTechnologies = styled.div`
@@ -59,8 +71,17 @@ const AdditionalTechnologies = styled.div`
 
     p {
       margin-top: 5%;
+
+      @media (max-width: 767.98px) { 
+        margin-bottom: 5%;
+      }
     }
   }
+
+  @media (max-width: 767.98px) { 
+    grid-template-columns: 1fr;
+    margin-bottom: 5%;
+   }
 `;
 
 function StackView() {

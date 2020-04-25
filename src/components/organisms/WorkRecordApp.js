@@ -64,7 +64,7 @@ const ProjectImage = styled.div`
     }
 
     @media (max-width: 991.98px) { 
-      height: 600px;
+      height: 650px;
     }
 
    div {
@@ -104,6 +104,8 @@ const ProjectTitle = styled.h2`
     }
 
     @media (max-width: 991.98px) { 
+      margin: 5% 0;
+
       a {
             text-decoration: underline;
             text-decoration-color: #fff;

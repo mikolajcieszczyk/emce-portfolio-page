@@ -1,35 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Linkedin , FacebookSquare , GithubSquare } from '@styled-icons/fa-brands';
+
+
+
 const ContactViewWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40% 10% 30%;
   align-items: center;
   justify-content: center;
 
   height: 500px;
-
-  @media (max-width: 575.98px) { 
-    grid-template-columns: 1fr;
-   }
 `;
 
 const ContactViewTitle = styled.h2`
-   margin-right: 5%;
+  align-self: end;
+  justify-self: center;
+
 
    font-size: 3em;
    color: #FFE48F;
-   text-align: right;
+   text-align: center;
    text-transform: uppercase;
 
    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-
-   @media (max-width: 575.98px) { 
-    align-self: end;
-    margin: 0;
-    font-size: 2em;
-    text-align: center;
-   }
 
    @keyframes text-focus-in {
   0% {
@@ -45,26 +41,54 @@ const ContactViewTitle = styled.h2`
 }
 `;
 
-const ContactViewData = styled.div`
-  p {
-    text-align: left;
-
-    @media (max-width: 575.98px) { 
-    text-align: center;
-   }
+const ContactViewEmail = styled.div`
+  justify-self: center;
 
     a {
-    color: #fff;
-    font-size: 24px; 
-    font-weight: 900;
-    text-decoration: underline;
-    text-decoration-color: #FFE48F;
+      color: #fff;
+      font-size: 24px; 
+      font-weight: 900;
+      text-decoration: underline;
+      text-decoration-color: #FFE48F;
 
-    @media (max-width: 575.98px) { 
-    font-size: 20px;
-   }
-   }
-  }
+      @media (max-width: 767.98px) { 
+        font-size: 20px;
+      }
+    }
+`;
+
+const ContactViewData = styled.div`
+  justify-self: center;
+  align-self: start;
+
+    a {
+        color: #fff;
+        font-size: 24px; 
+        font-weight: 900;
+        text-decoration: underline;
+        text-decoration-color: #FFE48F;
+
+        :nth-child(1) {
+          &:hover {
+            color: #0072b1;
+        }
+      }
+
+        :nth-child(2) {
+          &:hover {
+            color: #3b5998;
+        }
+      }
+
+        :nth-child(3) {
+          &:hover {
+            color: #d73a49;
+        }
+      }
+   } 
+}
+
+  
 `;
 
 function ContactView() {
@@ -73,11 +97,28 @@ function ContactView() {
         <ContactViewTitle>
           kontakt
         </ContactViewTitle>
+        <ContactViewEmail>
+          <a href="mailto:mikolaj.cieszczyk@gmail.com">mikolaj.cieszczyk@gmail.com</a>
+        </ContactViewEmail>
         <ContactViewData>
-          <p><a href="mailto:mikolaj.cieszczyk@gmail.com">mikolaj.cieszczyk@gmail.com</a></p>
-          <p><a href="https://www.linkedin.com/in/mikolajcieszczyk/" target="_blank">LinkedIn</a></p>
-          <p><a href="https://www.facebook.com/mikolaj.cieszczyk/" target="_blank">Facebook</a></p>
-          <p><a href="https://github.com/mikolajcieszczyk" target="_blank">GitHub</a></p>
+          <a 
+            href="https://www.linkedin.com/in/mikolajcieszczyk/" 
+            target="_blank"
+          >
+            <Linkedin size="54px" />
+          </a>
+          <a 
+            href="https://www.facebook.com/mikolaj.cieszczyk/" 
+            target="_blank"
+          >
+            <FacebookSquare size="54px" />
+          </a>
+          <a 
+            href="https://github.com/mikolajcieszczyk" 
+            target="_blank"
+          >
+            <GithubSquare size="54px" />
+          </a>
         </ContactViewData>
 
       </ContactViewWrapper>

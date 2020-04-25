@@ -10,9 +10,9 @@ const NavWrapper = styled.div`
   margin-right: 5%;
 
 
-  @media (max-width: 575.98px) { 
+  @media (max-width: 767.98px) { 
     justify-content: center;
-    margin: 0;
+    margin: 5% 0;
    }
 `;
 
@@ -24,7 +24,7 @@ const NavigationLink = styled(NavLink)`
 
   margin: 1%; 
 
-  @media (max-width: 575.98px) { 
+  @media (max-width: 767.98px) { 
     font-size: 1em;
    }
 `;
