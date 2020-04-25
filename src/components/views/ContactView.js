@@ -104,18 +104,21 @@ function ContactView() {
           <a 
             href="https://www.linkedin.com/in/mikolajcieszczyk/" 
             target="_blank"
+            rel="noopener noreferrer"
           >
             <Linkedin size="54px" />
           </a>
           <a 
             href="https://www.facebook.com/mikolaj.cieszczyk/" 
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FacebookSquare size="54px" />
           </a>
           <a 
             href="https://github.com/mikolajcieszczyk" 
             target="_blank"
+            rel="noopener noreferrer"
           >
             <GithubSquare size="54px" />
           </a>

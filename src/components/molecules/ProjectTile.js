@@ -35,7 +35,7 @@ export const PortfolioViewRectangleCaption = styled.div`
   background: #FFE48F;
   color: #000;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: ${ (props) => props.bolder ? "900" : "400"};
 
   text-align: center;
 
@@ -53,15 +53,28 @@ export const ProjectLink = styled(Link)`
 class ProjectTile extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { text: this.props.text }
+
+      this.boldCaption = this.boldCaption.bind(this);
+      this.unboldCaption = this.unboldCaption.bind(this);
+
+        this.state = { 
+          text: this.props.text,
+          bolder: false
+         }
     }
 
-    onMouseEnter(e) {
-        this.setState({ text: 'Szczegóły' })
+    boldCaption() {
+        this.setState({ 
+          text: "KLIK",
+          bolder: true
+         })
     }
 
-    onMouseLeave(e) {
-        this.setState({ text: this.props.text })
+    unboldCaption() {
+        this.setState({ 
+          text: this.props.text,
+          bolder: false
+         })
     }
 
     render() {
@@ -70,8 +83,8 @@ class ProjectTile extends React.Component {
         return(
           <ProjectLink to={this.props.url}>
             <PortfolioViewRectangleContainer
-              onMouseEnter={this.onMouseEnter.bind(this)}
-              onMouseLeave={this.onMouseLeave.bind(this)}
+              onMouseEnter={this.boldCaption}
+              onMouseLeave={this.unboldCaption}
             >
               <PortfolioViewRectangle
                 alt={this.props.alt}
@@ -82,7 +95,9 @@ class ProjectTile extends React.Component {
                         backgroundRepeat: "no-repeat",
                     }}
               />
-              <PortfolioViewRectangleCaption>
+              <PortfolioViewRectangleCaption
+                bolder={this.state.bolder}
+              >
                 {text}
               </PortfolioViewRectangleCaption>
             </PortfolioViewRectangleContainer>

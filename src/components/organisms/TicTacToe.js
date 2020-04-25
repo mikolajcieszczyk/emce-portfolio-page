@@ -235,6 +235,7 @@ class TicTacToe extends React.Component {
       <ProjectWrapper>
         <ProjectDemoLink
           href="https://github.com/mikolajcieszczyk/tic-tac-toe"
+          rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
         >
@@ -252,6 +253,7 @@ class TicTacToe extends React.Component {
           <ProjectTitle>
             <a
               href="https://github.com/mikolajcieszczyk/tic-tac-toe"
+              rel="noopener noreferrer"
               target="_blank"
               title="DEMO"
             >
@@ -320,6 +322,7 @@ class TicTacToe extends React.Component {
               <figure>
                 <a
                   href="https://github.com/mikolajcieszczyk/tic-tac-toe"
+                  rel="noopener noreferrer"
                   target="_blank"
                   title="KOD"
                 >

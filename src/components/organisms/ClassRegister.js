@@ -232,7 +232,8 @@ class ClassRegister extends React.Component {
     return (
       <ProjectWrapper>
         <ProjectDemoLink 
-          href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" 
+          href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2"
+          rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
         >
@@ -250,6 +251,7 @@ class ClassRegister extends React.Component {
           <ProjectTitle>
             <a
               href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2"
+              rel="noopener noreferrer"
               target="_blank"
               title="DEMO"
             >
@@ -303,9 +305,10 @@ class ClassRegister extends React.Component {
             <ProjectLinks>
               <figure>
                 <a 
-                href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" 
-                target="_blank"
-                title="KOD"
+                  href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2" 
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="KOD"
                 >
                   <Code size="60px" />
                   <figcaption>KOD</figcaption>

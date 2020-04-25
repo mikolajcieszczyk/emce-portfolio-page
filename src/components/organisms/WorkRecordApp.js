@@ -8,7 +8,6 @@ import jqueryIcon from 'assets/images/jqueryIcon.png';
 import jsIcon from 'assets/images/jsIcon.png';
 import mongoIcon from 'assets/images/mongoIcon.png';
 import expressIcon from 'assets/images/expressJsIcon.png';
-import githubIcon from 'assets/images/githubIcon.png';
 import { Code } from '@styled-icons/entypo';
 
 
@@ -239,6 +238,7 @@ class WorkRecordApp extends React.Component {
       <ProjectWrapper>
         <ProjectDemoLink
           href="https://github.com/mikolajcieszczyk/work-record-app"
+          rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
         >
@@ -256,6 +256,7 @@ class WorkRecordApp extends React.Component {
           <ProjectTitle>
             <a
               href="https://github.com/mikolajcieszczyk/work-record-app"
+              rel="noopener noreferrer"
               target="_blank"
               title="DEMO"
             >
@@ -336,6 +337,7 @@ class WorkRecordApp extends React.Component {
               <figure>
                 <a
                   href="https://github.com/mikolajcieszczyk/work-record-app"
+                  rel="noopener noreferrer"
                   target="_blank"
                   title="KOD"
                 >

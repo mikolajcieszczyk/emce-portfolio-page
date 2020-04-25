@@ -5,7 +5,6 @@ import TodolistBg from 'assets/images/todoListImg.png';
 import htmlIcon from 'assets/images/htmlIcon.png';
 import cssIcon from 'assets/images/cssIcon.png';
 import jsIcon from 'assets/images/jsIcon.png';
-import githubIcon from 'assets/images/githubIcon.png';
 import { Code } from '@styled-icons/entypo';
 
 
@@ -235,6 +234,7 @@ class ToDoList extends React.Component {
       <ProjectWrapper>
         <ProjectDemoLink
           href="https://github.com/mikolajcieszczyk/todo-list"
+          rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
         >
@@ -252,6 +252,7 @@ class ToDoList extends React.Component {
           <ProjectTitle>
             <a
               href="https://github.com/mikolajcieszczyk/todo-list"
+              rel="noopener noreferrer"
               target="_blank"
               title="DEMO"
             >
@@ -295,6 +296,7 @@ class ToDoList extends React.Component {
               <figure>
                 <a
                   href="https://github.com/mikolajcieszczyk/todo-list"
+                  rel="noopener noreferrer"
                   target="_blank"
                   title="KOD"
                 >

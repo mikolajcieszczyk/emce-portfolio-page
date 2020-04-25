@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import shortid from 'shortid';
 
 import ViewTitle from 'components/atoms/ViewTitle';
 import { mainTechnologies, secondaryTechnologies, additionalTechnologies } from 'assets/data/viewsData';
@@ -86,9 +87,10 @@ const AdditionalTechnologies = styled.div`
 
 function StackView() {
   const mapMainTechnologies = mainTechnologies.map((el) => (
-    <StackViewImage>
+    <StackViewImage
+      key={shortid.generate()}
+    >
       <img
-        key={el.id}
         src={el.src}
         alt={el.alt}
       />
@@ -96,9 +98,10 @@ function StackView() {
     </StackViewImage>
   ));
   const mapSecondaryTechnologies = secondaryTechnologies.map((el) => (
-    <StackViewImage>
+    <StackViewImage
+      key={shortid.generate()}
+    >
       <img
-        key={el.id}
         src={el.src}
         alt={el.alt}
         style={{ width: "60px", height: "60px" }}
@@ -107,7 +110,7 @@ function StackView() {
     </StackViewImage>
   ));
   const mapAdditionalTechnologies = additionalTechnologies.map((el) => (
-    <div id={el.id}>
+    <div key={shortid.generate()}>
       {el.component}
       <p style={{ color: "#FFD600", textAlign: "center" }}>{el.text}</p>
     </div>

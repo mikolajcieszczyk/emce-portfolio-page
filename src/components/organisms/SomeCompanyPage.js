@@ -235,6 +235,7 @@ class SomeCompanyPage extends React.Component {
       <ProjectWrapper>
         <ProjectDemoLink
           href="https://github.com/mikolajcieszczyk/some-company-page"
+          rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
         >
@@ -252,6 +253,7 @@ class SomeCompanyPage extends React.Component {
           <ProjectTitle>
             <a
               href="https://github.com/mikolajcieszczyk/some-company-page"
+              rel="noopener noreferrer"
               target="_blank"
               title="DEMO"
             >
@@ -304,6 +306,7 @@ class SomeCompanyPage extends React.Component {
               <figure>
                 <a
                   href="https://github.com/mikolajcieszczyk/some-company-page"
+                  rel="noopener noreferrer"
                   target="_blank"
                   title="KOD"
                 >

@@ -234,6 +234,7 @@ class AstronomyQuiz extends React.Component {
       <ProjectWrapper>
         <ProjectDemoLink
           href="https://github.com/mikolajcieszczyk/astronomy-quiz"
+          rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
         >
@@ -251,6 +252,7 @@ class AstronomyQuiz extends React.Component {
           <ProjectTitle>
             <a
               href="https://github.com/mikolajcieszczyk/astronomy-quiz"
+              rel="noopener noreferrer"
               target="_blank"
               title="DEMO"
             >
@@ -294,6 +296,7 @@ class AstronomyQuiz extends React.Component {
               <figure>
                 <a
                   href="https://github.com/mikolajcieszczyk/astronomy-quiz"
+                  rel="noopener noreferrer"
                   target="_blank"
                   title="KOD"
                 >
