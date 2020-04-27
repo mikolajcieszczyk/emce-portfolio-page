@@ -232,7 +232,7 @@ class ClassRegister extends React.Component {
     return (
       <ProjectWrapper>
         <ProjectDemoLink 
-          href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2"
+          href="https://nodejsclassregister.netlify.app/"
           rel="noopener noreferrer"
           target="_blank"
           title="DEMO"
@@ -250,7 +250,7 @@ class ClassRegister extends React.Component {
         <ProjectDesc>
           <ProjectTitle>
             <a
-              href="https://github.com/mikolajcieszczyk/nodejs-class-register-v2"
+              href="https://nodejsclassregister.netlify.app/"
               rel="noopener noreferrer"
               target="_blank"
               title="DEMO"

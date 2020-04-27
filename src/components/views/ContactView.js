@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 import { Linkedin , FacebookSquare , GithubSquare } from '@styled-icons/fa-brands';
 
-
-
 const ContactViewWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;

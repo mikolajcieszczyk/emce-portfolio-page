@@ -50,9 +50,10 @@ const showNavTitles = navTitles.map((element) => (
   </NavigationLink>
 ));
 
-// eslint-disable-next-line import/prefer-default-export
-export function Nav() {
+function Nav() {
     return (
       <NavWrapper>{showNavTitles}</NavWrapper>
     );
 };
+
+export default Nav;

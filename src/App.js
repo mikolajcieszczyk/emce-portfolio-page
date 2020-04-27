@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import styled from 'styled-components';
 import './App.css';
-import { Nav } from 'components/molecules/Nav/Nav';
+import Nav from 'components/molecules/Nav/Nav';
 import HomeView from 'components/views/HomeView';
 import StackView from 'components/views/StackView';
 import PortfolioView from 'components/views/PortfolioView';

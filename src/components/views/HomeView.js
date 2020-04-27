@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import mikolajPhoto from 'assets/images/mikolaj.png';
-import {Button} from 'components/atoms/Button';
+import Button from 'components/atoms/Button';
 
 const HomeViewWrapper = styled.div`
   display: grid;
@@ -156,7 +157,10 @@ function HomeView() {
       <WelcomeContent>
         <MyNameIs>
           <p>
-            <span>Cześć,</span> nazywam się <span>_</span>
+            <span>Cześć,</span>
+            {' '}
+            nazywam się
+            <span>_</span>
           </p>
         </MyNameIs>
         <NameSurname>
@@ -167,8 +171,8 @@ function HomeView() {
           JUNIOR FRONT-END DEVELOPER
         </MyPosition>
         <ButtonsContainer>
-          <Button secondary>PORTFOLIO</Button>
-          <Button>KONTAKT</Button>
+          <Link to="/portfolio"><Button secondary>PORTFOLIO</Button></Link>
+          <Link to="/contact"><Button>KONTAKT</Button></Link>
         </ButtonsContainer>
       </WelcomeContent>
     </HomeViewWrapper>
